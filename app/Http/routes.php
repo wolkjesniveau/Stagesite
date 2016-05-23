@@ -12,11 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/welcome');
 });
 Route::get('companies', function () {
-    return view('companies');
+    return view('pages/companies');
 });
 Route::get('company', function () {
-    return view('company');
+    return view('pages/company');
 });
