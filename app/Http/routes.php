@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('bedrijven', function () {
+    return view('bedrijven');
+});
+Route::get('bedrijf', function () {
+    return view('bedrijf');
+});
