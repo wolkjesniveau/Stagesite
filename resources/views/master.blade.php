@@ -19,8 +19,9 @@
         {{-- HEADER LEFT --}}
         <div class="header header-left">
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Bedrijven</a></li>
+                <li><a href="{{ route('welcome') }}">Home</a></li>
+
+                <li><a href="{{ route('company') }}">Bedrijven</a></li>
                 <li><a href="">Admin</a></li>
             </ul>
         </div>

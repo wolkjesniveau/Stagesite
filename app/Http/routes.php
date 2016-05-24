@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', 'PagesController@welcome');
-Route::get('companies', 'PagesController@companies');
-Route::get('company', 'PagesController@company');
-Route::get('master', 'PagesController@master');
+Route::get('/', 'PagesController@welcome')->name('welcome');
+Route::get('companies', 'PagesController@companies')->name('companies');
+Route::get('company', 'PagesController@company')->name('company');
+Route::get('master', 'PagesController@master')->name('master');
