@@ -20,3 +20,6 @@ Route::get('companies', function () {
 Route::get('company', function () {
     return view('pages/company');
 });
+Route::get('master', function () {
+    return view('master/master');
+});
