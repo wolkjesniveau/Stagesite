@@ -35,15 +35,18 @@ header ul li {
     height: 100%;
 /*    background-image: url('http://2geh.com/data/uploads/18/557132.jpg');  */
     background-color: dimgrey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 400px;
 }
 .header {
     display: inline-block;
-    padding-top: 0.7%;
+    padding-top: 1%;
     z-index: 1000;
 }
 .header-container {
     height: 100%;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
 }
 .header-left {
@@ -60,12 +63,20 @@ header ul li {
     text-align: center;
 }
 .search {
-    width: 50%;
+    width: 60%;
 }
 .search-button {
     margin-left: -4px;
 }
 
+/* STYLING VAN DE FOOTER */
+footer {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+}
 /* STYLING VAN LINKS */
 a, a:link, a:visited{
     text-decoration: none !important;

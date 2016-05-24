@@ -7,3 +7,7 @@
 @section('content')
     <div class="title">Bedrijven</div>
 @stop
+
+@section('footer')
+    <p>footer</p>
+@stop
