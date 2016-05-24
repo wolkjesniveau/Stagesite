@@ -43,8 +43,8 @@
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fa fa-key fa-fw"></i> Log in</a></li>
-                    <li><a href="#"><i class="fa fa-user-plus fa-fw"></i> Register</a></li>
+                    <li><a href="{{ route('login') }}"><i class="fa fa-key fa-fw"></i> Log in</a></li>
+                    <li><a href="{{ route('register') }}"><i class="fa fa-user-plus fa-fw"></i> Register</a></li>
                     <hr class="devider">                {{-- WHEN LOGGED IN GIVE THESE OPTIONS --}}
                     <li class="hidden"><a href="#"><i class="fa fa-key fa-fw"></i> Profiel</a></li>
                     <li class="hidden"><a href="#"><i class="fa fa-user-plus fa-fw"></i> Uitloggen</a></li>
@@ -65,12 +65,11 @@
     </div>
 
     {{-- CONTENT --}}
-    <div class="container">
-        <div class="content">
-            @yield('content')
+        <div class="container">
+            <div class="content">
+                @yield('content')
+            </div>
         </div>
-    </div>
-
     {{-- FOOTER --}}
     <footer>
             @yield('footer')

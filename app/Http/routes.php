@@ -16,3 +16,10 @@ Route::get('/', 'PagesController@welcome')->name('welcome');
 Route::get('companies', 'PagesController@companies')->name('companies');
 Route::get('company', 'PagesController@company')->name('company');
 Route::get('master', 'PagesController@master')->name('master');
+Route::get('login', 'PagesController@login')->name('login');
+Route::get('register', 'PagesController@register')->name('register');
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);

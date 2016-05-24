@@ -46,7 +46,7 @@ header ul li {
 }
 .header-container {
     height: 100%;
-    width: 70%;
+    width: 1170px;
     margin: 0 auto;
 }
 .header-left {
@@ -72,10 +72,15 @@ header ul li {
 /* STYLING VAN DE FOOTER */
 footer {
     width: 100%;
+    background-color: #f6f6f6;
     margin: 0 auto;
     text-align: center;
-    position: absolute;
+    position: relative;
     bottom: 0px;
+    z-index: 1000;
+}
+footer p {
+    margin: 0;
 }
 /* STYLING VAN LINKS */
 a, a:link, a:visited{
@@ -100,4 +105,8 @@ a:hover {
 
 .title {
     font-size: 96px;
+}
+.info-column {
+    height: 250px;
+    padding: 0 10px 10px;
 }
