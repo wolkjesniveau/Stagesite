@@ -11,15 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages/welcome');
-});
-Route::get('companies', function () {
-    return view('pages/companies');
-});
-Route::get('company', function () {
-    return view('pages/company');
-});
-Route::get('master', function () {
-    return view('master/master');
-});
+
+Route::get('/', 'PagesController@welcome');
+Route::get('companies', 'PagesController@companies');
+Route::get('company', 'PagesController@company');
+Route::get('master', 'PagesController@master');

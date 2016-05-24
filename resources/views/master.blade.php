@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="<?php echo asset('css/stylesheet.css')?>" type="text/css">
     <link rel="stylesheet" href="<?php echo asset('css/costum.css')?>" type="text/css">
     <link rel="stylesheet" href="<?php echo asset('font-awesome-4.6.3/css/font-awesome.min.css')?>" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 </head>
 
@@ -39,8 +40,9 @@
             </div>
         </div>
     </header>
-<body>
 {{-- HEADER END --}}
+<body>
+
 
 
 {{-- TOP PAGE BANNER --}}
@@ -51,7 +53,8 @@
 {{-- CONTENT --}}
     <div class="container">
         <div class="content">
-            <div class="title">MASTER</div>
+            @yield('content')
+     {{--       <div class="title">MASTER</div>--}}
         </div>
     </div>
 </body>
