@@ -1,3 +1,13 @@
-.fa-user  {
+.fa  {
     color: #736F6F !important;
+}
+.tw {
+    font-size: 20px !important;
+}
+.devider {
+    margin: 7px 0;
+}
+
+.btn-group.open .dropdown-toggle {
+    -webkit-box-shadow: none!important;
 }
