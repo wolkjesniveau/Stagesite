@@ -25,5 +25,5 @@
 @stop
 
 @section('footer')
-    <p>© bla bla copirickt</p>
+    <p>© import random footer text</p>
 @stop
