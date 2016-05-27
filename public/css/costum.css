@@ -17,3 +17,11 @@
 .panel-body {
     background-color: #dddddd;
 }
+.filler{
+    height: 200px;
+}
+.devider-right {
+    padding-right: 5px;
+    border-right: 1px solid;
+    border-color:  grey;
+}

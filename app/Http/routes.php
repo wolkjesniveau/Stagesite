@@ -18,6 +18,8 @@ Route::get('company', 'PagesController@company')->name('company');
 Route::get('master', 'PagesController@master')->name('master');
 Route::get('login', 'PagesController@login')->name('login');
 Route::get('register', 'PagesController@register')->name('register');
+// ROLE CHECK MUST BE ADDED WHERE WHEN DATABASE IS CORRECT
+Route::get('admin', 'PagesController@admin')->name('admin');
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
