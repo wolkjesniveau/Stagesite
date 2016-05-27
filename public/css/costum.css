@@ -11,3 +11,9 @@
 .btn-group.open .dropdown-toggle {
     -webkit-box-shadow: none!important;
 }
+.navbar-default {
+    background-color: white !important;
+}
+.panel-body {
+    background-color: #dddddd;
+}

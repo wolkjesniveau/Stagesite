@@ -29,14 +29,14 @@
         {{-- HEADER MID --}}
         <div class="header header-mid">
             <div class="header-search">
-                <input class="search" type="text" name="search" placeholder="Zoeken op de website">
+                <input class="search" type="text" name="search" placeholder=" Zoeken op de website">
                 <button class="search-button">Zoek</button>
             </div>
         </div>
 
         {{-- HEADER RIGHT --}}
         <div class="header header-right">
-            <a href="#">inloggen/registreren</a>
+            <a href="{{ route('login') }}">inloggen/registreren</a>
             <div class="btn-group dropdown-toggle">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <span class="fa fa-user tw" title="Toggle dropdown menu"></span>
