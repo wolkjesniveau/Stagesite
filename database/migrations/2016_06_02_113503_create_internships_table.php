@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateInternshipsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('internships', function (Blueprint $table) {
+            $table->date('begin_DATE');
+            $table->date('eind_DATE');
+            $table->foreign('contact_id')->references('id')->on('contacts');
+            $table->unsignedInteger('contact_id');
+            $table->foreign('status_id')->references('id')->on('statuses');
+            $table->unsignedInteger('status_id');
+            $table->foreign('study_id')->references('id')->on('studies');
+            $table->unsignedInteger('study_id');
+            $table->increments('id');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('internships');
+    }
+}
