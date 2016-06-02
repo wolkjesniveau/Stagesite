@@ -35,8 +35,10 @@
         {{-- HEADER MID --}}
         <div class="header header-mid">
             <div class="header-search">
-                <input class="search" type="text" name="search" placeholder=" Zoeken op de website">
-                <button class="search-button">Zoek</button>
+                <form method="get" action="">
+                    <input class="search" id="search" type="text" name="search" placeholder=" Zoeken op de website">
+                    <button class="search-button">Zoek</button>
+                </form>
             </div>
         </div>
 
