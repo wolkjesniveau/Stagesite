@@ -12,7 +12,16 @@ class RolesTableSeeder extends Seeder
     public function run()
     {
         Role::create([
+            'name' => 'Guest'
+        ]);
+        Role::create([
             'name' => 'Stagier'
+        ]);
+        Role::create([
+            'name' => 'PraktijkBegeleider'
+        ]);
+        Role::create([
+            'name' => 'Docent'
         ]);
     }
 }
