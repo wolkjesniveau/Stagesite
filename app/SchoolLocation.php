@@ -1,0 +1,19 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class SchoolLocation extends Model
+{
+    protected $fillable = [
+        'streetname',
+        'postcode',
+        'location',
+    ];
+
+    public function locations()
+    {
+        return $this->hasMany('App/School', 'App/Study');
+    }
+}
