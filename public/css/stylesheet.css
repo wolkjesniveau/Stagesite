@@ -129,3 +129,11 @@ a:hover {
     height: 250px;
     padding: 0 10px 10px;
 }
+.stageblokjes div{
+    display: inline-block;
+    padding: 100px;
+    border: 2px solid;
+}
+.leerbedrijf {
+    border: 1px;
+}
