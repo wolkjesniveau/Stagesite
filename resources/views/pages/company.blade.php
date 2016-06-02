@@ -25,5 +25,5 @@
 @stop
 
 @section('footer')
-    <p>© import random footer text</p>
+    <p>© input random footer text</p>
 @stop
