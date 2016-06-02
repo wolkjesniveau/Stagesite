@@ -35,7 +35,7 @@ header ul li {
 .headerimg {
     width: 100%;
     max-width: 100%;
-    max-height: 450px;
+    max-height: 400px;
     height: 100%;
 /*   background-image: url('http://2geh.com/data/uploads/18/557132.jpg');*/
     opacity: 0.8;
@@ -134,6 +134,7 @@ a:hover {
     padding: 100px;
     border: 2px solid;
 }
-.leerbedrijf {
-    border: 1px;
+.stageblok {
+    min-height: 285px;
+    height: 285px;
 }
