@@ -16,7 +16,6 @@ class UsersTableSeeder extends Seeder
             'email' => 'HenkvdBerg@onzin.nl',
             'password' => bcrypt('password'),
             'role_id' => 1
-
         ]);
     }
 }
