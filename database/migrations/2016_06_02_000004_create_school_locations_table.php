@@ -17,6 +17,8 @@ class CreateSchoolLocationsTable extends Migration
             $table->string('streetname');
             $table->string('postcode');
             $table->string('location');
+            $table->unsignedInteger('school_id');
+            $table->foreign('school_id')->references('id')->on('schools');
             $table->timestamps();
         });
     }

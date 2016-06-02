@@ -10,4 +10,6 @@ class Cohort extends Model
         'name',
         'schoolyear'
     ];
+
+
 }

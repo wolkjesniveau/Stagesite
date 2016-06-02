@@ -10,4 +10,9 @@ class Crebo extends Model
         'name',
         'number'
     ];
+
+    public function crebo()
+    {
+        return $this->hasMany('App/Cohort');
+    }
 }

@@ -9,4 +9,6 @@ class Study extends Model
     protected $fillable = [
         'education_id'
     ];
+
+
 }

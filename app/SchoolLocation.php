@@ -11,4 +11,9 @@ class SchoolLocation extends Model
         'postcode',
         'location',
     ];
+
+    public function locations()
+    {
+        return $this->hasMany('App/School', 'App/Study');
+    }
 }
