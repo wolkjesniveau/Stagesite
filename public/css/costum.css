@@ -11,3 +11,17 @@
 .btn-group.open .dropdown-toggle {
     -webkit-box-shadow: none!important;
 }
+.navbar-default {
+    background-color: white !important;
+}
+.panel-body {
+    background-color: #dddddd;
+}
+.filler{
+    height: 150px;
+}
+.devider-right {
+    padding-right: 5px;
+    border-right: 1px solid;
+    border-color:  grey;
+}

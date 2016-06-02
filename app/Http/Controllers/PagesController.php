@@ -23,4 +23,23 @@ class PagesController extends Controller
         return view('pages.company');
     }
 
+    public function master()
+    {
+        return view('master');
+    }
+
+    public function login()
+    {
+        return view('auth.login');
+    }
+
+    public function register()
+    {
+        return view('auth.register');
+    }
+
+    public function admin()
+    {
+        return view('admin.admin');
+    }
 }
