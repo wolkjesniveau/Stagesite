@@ -13,12 +13,11 @@ class CreateInternshipUsersTable extends Migration
     public function up()
     {
         Schema::create('internship_users', function (Blueprint $table) {
+            $table->increments('id');
             $table->foreign('internship_id')->references('id')->on('internships');
             $table->unsignedInteger('internship_id');
-
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedInteger('user_id');
-            $table->increments('id');
             $table->timestamps();
 
 

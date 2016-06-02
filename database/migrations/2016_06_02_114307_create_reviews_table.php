@@ -13,13 +13,13 @@ class CreateReviewsTable extends Migration
     public function up()
     {
         Schema::create('reviews', function (Blueprint $table) {
+            $table->increments('id');
             $table->foreign('internship_user_id')->references('id')->on('internship_users');
             $table->unsignedInteger('internship_user_id');
             $table->foreign('status_id')->references('id')->on('statuses');
             $table->unsignedInteger('status_id');
             $table->longText('review');
             $table->decimal('3,1');
-            $table->increments('id');
             $table->timestamps();
         });
     }

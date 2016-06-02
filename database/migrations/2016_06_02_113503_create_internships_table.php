@@ -13,6 +13,7 @@ class CreateInternshipsTable extends Migration
     public function up()
     {
         Schema::create('internships', function (Blueprint $table) {
+            $table->increments('id');
             $table->date('begin_DATE');
             $table->date('eind_DATE');
             $table->foreign('contact_id')->references('id')->on('contacts');
@@ -21,7 +22,6 @@ class CreateInternshipsTable extends Migration
             $table->unsignedInteger('status_id');
             $table->foreign('study_id')->references('id')->on('studies');
             $table->unsignedInteger('study_id');
-            $table->increments('id');
             $table->timestamps();
         });
     }
