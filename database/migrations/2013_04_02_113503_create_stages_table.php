@@ -18,7 +18,7 @@ class CreateInternshipsTable extends Migration
             $table->date('eind_DATE');
             $table->foreign('contact_id')->references('id')->on('contacts');
             $table->unsignedInteger('contact_id');
-            $table->foreign('status_id')->references('id')->on('statuses');
+            $table->foreign('status_id')->references('id')->on('status');
             $table->unsignedInteger('status_id');
             $table->foreign('study_id')->references('id')->on('studies');
             $table->unsignedInteger('study_id');
