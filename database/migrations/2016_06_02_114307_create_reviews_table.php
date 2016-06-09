@@ -14,9 +14,9 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('stage_user_id')->references('id')->on('stage_users');
-            $table->unsignedInteger('stage_user_id');
-            $table->foreign('status_id')->references('id')->on('status');
+            $table->foreign('internship_user_id')->references('id')->on('internship_users');
+            $table->unsignedInteger('internship_user_id');
+            $table->foreign('status_id')->references('id')->on('statuses');
             $table->unsignedInteger('status_id');
             $table->longText('review');
             $table->decimal('3,1');

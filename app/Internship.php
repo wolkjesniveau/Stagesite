@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class status extends Model
+class Internship extends Model
 {
     protected $fillable = [
-        'status'
+        'begin_DATE',
+        'eind_DATE',
     ];
 }
