@@ -1,9 +1,8 @@
 <?php
-
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStageUsersTable extends Migration
+class CreateInternshipUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,18 +11,15 @@ class CreateStageUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('stage_users', function (Blueprint $table) {
+        Schema::create('internship_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('stage_id')->references('id')->on('stages');
-            $table->unsignedInteger('stage_id');
+            $table->foreign('internship_id')->references('id')->on('internships');
+            $table->unsignedInteger('internship_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedInteger('user_id');
             $table->timestamps();
-
-
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -31,6 +27,6 @@ class CreateStageUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('stage_users');
+        Schema::drop('internship_users');
     }
 }

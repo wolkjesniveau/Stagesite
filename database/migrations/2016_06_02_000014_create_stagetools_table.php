@@ -16,8 +16,8 @@ class CreateStagetoolsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('tools_id');
             $table->foreign('tools_id')->references('id')->on('tools');
-            $table->unsignedInteger('stage_user_id');
-            $table->foreign('stage_user_id')->references('id')->on('stage_users');
+            $table->unsignedInteger('internship_user_id');
+            $table->foreign('internship_user_id')->references('id')->on('internship_users');
             $table->unsignedInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies');
             $table->timestamps();
