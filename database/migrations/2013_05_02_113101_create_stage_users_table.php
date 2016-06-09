@@ -12,7 +12,7 @@ class CreateStageUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('internship_users', function (Blueprint $table) {
+        Schema::create('stage_users', function (Blueprint $table) {
             $table->increments('id');
             $table->foreign('stage_id')->references('id')->on('stages');
             $table->unsignedInteger('stage_id');

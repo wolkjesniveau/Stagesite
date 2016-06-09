@@ -12,7 +12,7 @@ class CreateStagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('internships', function (Blueprint $table) {
+        Schema::create('stages', function (Blueprint $table) {
             $table->increments('id');
             $table->date('begin_DATE');
             $table->date('eind_DATE');
