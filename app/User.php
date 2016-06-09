@@ -22,4 +22,17 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Role');
     }
+
+    public function is($roleName)
+    {
+        foreach ($this->role()->get() as $role)
+        {
+            if ($role->name == $roleName)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
