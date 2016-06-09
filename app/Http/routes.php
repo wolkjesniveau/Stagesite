@@ -16,12 +16,25 @@ Route::get('/', 'PagesController@welcome')->name('welcome');
 Route::get('companies', 'PagesController@companies')->name('companies');
 Route::get('company', 'PagesController@company')->name('company');
 Route::get('master', 'PagesController@master')->name('master');
-Route::get('login', 'PagesController@login')->name('login');
+//Route::get('login', 'PagesController@login')->name('login');
 Route::get('register', 'PagesController@register')->name('register');
 // ROLE CHECK MUST BE ADDED WHERE WHEN DATABASE IS CORRECT
 Route::get('admin', 'PagesController@admin')->name('admin');
 
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
+//Route::controllers([
+//    'auth' => 'Auth\AuthController',
+//    'password' => 'Auth\PasswordController',
+//]);
+
+$this->get('login', 'Auth\AuthController@showLoginForm')->name('login');
+$this->post('login', 'Auth\AuthController@login')->name('auth.login');
+$this->get('logout', 'Auth\AuthController@logout')->name('logout');
+
+// Registration Routes...
+$this->get('register', 'Auth\AuthController@showRegistrationForm')->name('register');
+$this->post('register', 'Auth\AuthController@register')->name('auth.register');
+
+// Password Reset Routes...
+$this->get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
+$this->post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
+$this->post('password/reset', 'Auth\PasswordController@reset');
