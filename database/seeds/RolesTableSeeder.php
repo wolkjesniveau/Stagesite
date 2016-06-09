@@ -15,13 +15,16 @@ class RolesTableSeeder extends Seeder
             'name' => 'Guest'
         ]);
         Role::create([
-            'name' => 'Stagier'
+            'name' => 'Stagiere'
         ]);
         Role::create([
             'name' => 'PraktijkBegeleider'
         ]);
         Role::create([
             'name' => 'Docent'
+        ]);
+        Role::create([
+            'name' => 'Admin'
         ]);
     }
 }

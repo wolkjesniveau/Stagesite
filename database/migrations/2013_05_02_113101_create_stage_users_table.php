@@ -31,6 +31,6 @@ class CreateStageUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('internship_users');
+        Schema::drop('stage_users');
     }
 }
