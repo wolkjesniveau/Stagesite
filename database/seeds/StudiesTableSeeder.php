@@ -11,7 +11,7 @@ class StudiesTableSeeder extends Seeder
      */
     public function run()
     {
-        Study::create([
+        DB::table('Studies')->insert([
             'education_id' => 1,
             'location_id' => 1,
             'cohort_id' => 1

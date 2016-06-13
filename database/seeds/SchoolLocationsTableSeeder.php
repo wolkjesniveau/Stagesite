@@ -11,7 +11,7 @@ class SchoolLocationsTableSeeder extends Seeder
      */
     public function run()
     {
-        SchoolLocation::create([
+        DB::table('School_locations')->insert([
             'streetname' => 'Posthumalaan',
             'postcode' => '1234 AB',
             'location' => 'Rotterdam',

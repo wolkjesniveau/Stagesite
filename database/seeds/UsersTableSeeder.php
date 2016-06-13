@@ -11,11 +11,9 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name' => 'Henk vd Berg',
+        DB::table('Users')->insert([
             'email' => 'HenkvdBerg@onzin.nl',
             'password' => bcrypt('password'),
-            'role_id' => 1
         ]);
     }
 }
