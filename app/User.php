@@ -19,21 +19,4 @@ class User extends Authenticatable
         'contact_id'
     ];
 
-    public function role()
-    {
-        return $this->belongsTo('App\Role');
-    }
-
-    public function is($roleName)
-    {
-        foreach ($this->role()->get() as $role)
-        {
-            if ($role->name == $roleName)
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
 }

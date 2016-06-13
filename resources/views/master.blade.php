@@ -26,9 +26,9 @@
             <ul>
                 <li><a href="{{ route('welcome') }}">Home</a></li>
                 <li><a href="{{ route('companies') }}">Bedrijven</a></li>
-                @if (Auth::User())
-                    <li><a href="{{ route('admin') }}">Admin</a></li>
-                @endif
+                {{-- NEED TO ADD ROLECHECK --}}
+                <li><a href="{{ route('admin') }}">Admin</a></li>
+
             </ul>
         </div>
 
@@ -63,7 +63,7 @@
                     <hr class="devider">                {{-- WHEN LOGGED IN GIVE THESE OPTIONS --}}
                     @else
                     <li class=""><a href="#"><i class="fa fa-key fa-fw"></i> Profiel</a></li>
-                    <li class=""><a href="#"><i class="fa fa-user-plus fa-fw"></i> Uitloggen</a></li>
+                    <li class=""><a href="{{  }}"><i class="fa fa-user-plus fa-fw"></i> Uitloggen</a></li>
                     <hr class="devider hidden">         {{-- WHEN ADMIN GIVE THIS OPTIONS --}}
                     @endif
                     <li class=""><a href="{{ route('admin') }}"><i class="fa fa-unlock fa-fw"></i> Admin</a></li>

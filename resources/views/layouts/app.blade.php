@@ -47,9 +47,18 @@
 
                 <a href="{{ route('register') }}">registreren</a>
             @else
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
+                <ul class="dropdown-menu ">
+                    @if (Auth::guest())
+                        <li><a href="{{ route('login') }}"><i class="fa fa-key fa-fw"></i> Log in</a></li>
+                        <li><a href="{{ route('register') }}"><i class="fa fa-user-plus fa-fw"></i> Register</a></li>
+                        <hr class="devider">                {{-- WHEN LOGGED IN GIVE THESE OPTIONS --}}
+                    @else
+                        <li class=""><a href="#"><i class="fa fa-key fa-fw"></i> Profiel</a></li>
+                        <li class=""><a href="#"><i class="fa fa-user-plus fa-fw"></i> Uitloggen</a></li>
+                        <hr class="devider hidden">         {{-- WHEN ADMIN GIVE THIS OPTIONS --}}
+                    @endif
+                    <li class=""><a href="{{ route('admin') }}"><i class="fa fa-unlock fa-fw"></i> Admin</a></li>
+                </ul>
             @endif
 
         </div>

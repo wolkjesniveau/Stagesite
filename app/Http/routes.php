@@ -21,7 +21,10 @@ Route::get('register', 'PagesController@register')->name('register');
 // ROLE CHECK MUST BE ADDED WHERE WHEN DATABASE IS CORRECT
 Route::get('admin', 'PagesController@admin')->name('admin');
 Route::get('internshipAdmin', 'PagesController@internshipAdmin')->name('internshipAdmin');
+
+
 Route::get('internships', 'InternshipsController@index');
+Route::get('studies', 'StudiesController@index');
 
 
 $this->get('login', 'Auth\AuthController@showLoginForm')->name('login');
