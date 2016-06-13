@@ -14,11 +14,11 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('naam', 45)->nullable(false)->change();
-            $table->string('address', 45)->nullable(false)->change();
-            $table->string('postcode', 7)->nullable(false)->change();
-            $table->string('plaats', 45)->nullable(false)->change();
-            $table->string('telnr', 45)->nullable(false)->change();
+            $table->string('naam', 45);
+            $table->string('address', 45);
+            $table->string('postcode', 7);
+            $table->string('plaats', 45);
+            $table->string('telnr', 45);
             $table->timestamps();
         });
     }

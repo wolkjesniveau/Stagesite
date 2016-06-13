@@ -11,7 +11,7 @@ class CompaniesTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\User::create([
+        \App\Company::create([
             'naam' => 'MacDonalds',
             'address' => 'Beursplein 21',
             'postcode' => '1234 XD',

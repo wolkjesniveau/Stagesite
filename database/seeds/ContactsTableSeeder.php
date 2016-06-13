@@ -11,12 +11,14 @@ class ContactsTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\User::create([
-            'name' => 'Vince',
+        \App\Contacts::create([
             'surname' => 'van der Hilst',
+            'name' => 'Vince',
             'email' => 'vvanderhilst@gmail.com',
             'tel' => '+181418267',
-            'mobile' => '+31614562609'
+            'mobile' => '+31614562609',
+            'company_id'=>1
+
         ]);
     }
 }

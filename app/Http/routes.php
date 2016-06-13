@@ -20,11 +20,9 @@ Route::get('master', 'PagesController@master')->name('master');
 Route::get('register', 'PagesController@register')->name('register');
 // ROLE CHECK MUST BE ADDED WHERE WHEN DATABASE IS CORRECT
 Route::get('admin', 'PagesController@admin')->name('admin');
+Route::get('internshipAdmin', 'PagesController@internshipAdmin')->name('internshipAdmin');
+Route::get('internships', 'InternshipsController@index');
 
-//Route::controllers([
-//    'auth' => 'Auth\AuthController',
-//    'password' => 'Auth\PasswordController',
-//]);
 
 $this->get('login', 'Auth\AuthController@showLoginForm')->name('login');
 $this->post('login', 'Auth\AuthController@login')->name('auth.login');

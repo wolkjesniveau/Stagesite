@@ -26,7 +26,7 @@
             <ul>
                 <li><a href="{{ route('welcome') }}">Home</a></li>
                 <li><a href="{{ route('companies') }}">Bedrijven</a></li>
-                @if (Auth::user())
+                @if (Auth::User())
                     <li><a href="{{ route('admin') }}">Admin</a></li>
                 @endif
             </ul>

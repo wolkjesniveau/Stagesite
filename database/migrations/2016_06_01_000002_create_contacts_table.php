@@ -14,12 +14,12 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('surname', 45)->nullable(false)->change();
+            $table->string('surname', 45);
             $table->string('insertion', 45);
-            $table->string('name', 45)->nullable(false)->change();
+            $table->string('name', 45);
             $table->string('email', 250)->unique();
             $table->string('tel', 45);
-            $table->string('mobile', 45)->nullable(true)->change();
+            $table->string('mobile', 45);
             $table->unsignedInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies');
             $table->timestamps();
