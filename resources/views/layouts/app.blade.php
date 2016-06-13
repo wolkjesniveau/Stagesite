@@ -14,6 +14,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/stylesheet.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/costum.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('font-awesome-4.6.3/css/font-awesome.min.css') }}">
+
+    <script src="{{ asset('js/jquery-1.12.4.min.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
@@ -42,23 +45,29 @@
 
         {{-- HEADER RIGHT --}}
         <div class="header header-right">
+
+            <ul class="dropdown-menu ">
+                @if (Auth::guest())
+                    <li><a href="{{ route('login') }}"><i class="fa fa-key fa-fw"></i> Log in</a></li>
+                    <li><a href="{{ route('register') }}"><i class="fa fa-user-plus fa-fw"></i> Register</a></li>
+                    <hr class="devider">                {{-- WHEN LOGGED IN GIVE THESE OPTIONS --}}
+                @else
+                    <li class=""><a href="#"><i class="fa fa-key fa-fw"></i> Profiel</a></li>
+                    <li class=""><a href="{{ route('logout') }}"><i class="fa fa-user-plus fa-fw"></i> Uitloggen</a></li>
+                    <hr class="devider hidden">         {{-- WHEN ADMIN GIVE THIS OPTIONS --}}
+                @endif
+                <li class=""><a href="{{ route('admin') }}"><i class="fa fa-unlock fa-fw"></i> Admin</a></li>
+            </ul>
+
             @if (Auth::guest())
                 <a class="devider-right" href="{{ route('login') }}">inloggen</a>
 
                 <a href="{{ route('register') }}">registreren</a>
             @else
-                <ul class="dropdown-menu ">
-                    @if (Auth::guest())
-                        <li><a href="{{ route('login') }}"><i class="fa fa-key fa-fw"></i> Log in</a></li>
-                        <li><a href="{{ route('register') }}"><i class="fa fa-user-plus fa-fw"></i> Register</a></li>
-                        <hr class="devider">                {{-- WHEN LOGGED IN GIVE THESE OPTIONS --}}
-                    @else
-                        <li class=""><a href="#"><i class="fa fa-key fa-fw"></i> Profiel</a></li>
-                        <li class=""><a href="#"><i class="fa fa-user-plus fa-fw"></i> Uitloggen</a></li>
-                        <hr class="devider hidden">         {{-- WHEN ADMIN GIVE THIS OPTIONS --}}
-                    @endif
-                    <li class=""><a href="{{ route('admin') }}"><i class="fa fa-unlock fa-fw"></i> Admin</a></li>
-                </ul>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
+
             @endif
 
         </div>
