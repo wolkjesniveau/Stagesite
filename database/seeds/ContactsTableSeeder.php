@@ -17,7 +17,7 @@ class ContactsTableSeeder extends Seeder
             'email' => 'vvanderhilst@gmail.com',
             'tel' => '+181418267',
             'mobile' => '+31614562609',
-            'company_id'=>1
+            'company_id'=> 1
 
         ]);
     }

@@ -8,7 +8,6 @@
 
     <h1>Admin bedrijven pagina</h1>
 
-
 @stop
 
 @section('footer')
