@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Study;
 
 class PagesController extends Controller
 {
@@ -48,7 +49,7 @@ class PagesController extends Controller
 
     public function studiesAdmin()
     {
-        return view('admin.studiesAdmin');
+        return view('admin.studiesAdmin')->with('studies', Study::all());
     }
     public function companiesAdmin()
     {
