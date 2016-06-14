@@ -11,7 +11,7 @@ class StatusTableSeeder extends Seeder
      */
     public function run()
     {
-        \app\Status::create([
+        \App\Status::create([
             'status' => 'lit'
         ]);
     }
