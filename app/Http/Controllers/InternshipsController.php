@@ -1,4 +1,11 @@
-<?PHP
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+
 class InternshipController extends \App\Http\Controllers\Controller {
 
 public function index()
