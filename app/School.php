@@ -10,4 +10,9 @@ class School extends Model
         'name'
     ];
 
+    // Werkt
+    public function schoolLocations()
+    {
+        return $this->hasMany('App\SchoolLocation');
+    }
 }

@@ -14,8 +14,9 @@ class CreateStudiesTable extends Migration
     {
         Schema::create('studies', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('location_id');
-            $table->foreign('location_id')->references('id')->on('school_locations');
+            $table->string('name_study');
+            $table->unsignedInteger('school_location_id');
+            $table->foreign('school_location_id')->references('id')->on('school_locations');
             $table->unsignedInteger('cohort_id');
             $table->foreign('cohort_id')->references('id')->on('cohorts');
             $table->unsignedInteger('crebo_id');

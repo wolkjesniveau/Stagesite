@@ -11,5 +11,9 @@ class Cohort extends Model
         'schoolyear',
     ];
 
+    public function crebo()
+    {
+        return $this->hasMany('App/Crebo');
+    }
 
 }

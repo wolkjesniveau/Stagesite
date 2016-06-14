@@ -19,10 +19,10 @@ Route::get('master', 'PagesController@master')->name('master');
 Route::get('register', 'PagesController@register')->name('register');
 // ROLE CHECK MUST BE ADDED HERE WHEN DATABASE IS CORRECT
 Route::get('admin', 'PagesController@admin')->name('admin');
-Route::get('internshipAdmin', 'PagesController@internshipAdmin')->name('internshipAdmin');
-Route::get('studiesAdmin', 'PagesController@studiesAdmin')->name('studiesAdmin');
-Route::get('schoolsAdmin', 'PagesController@schoolsAdmin')->name('schoolsAdmin');
-Route::get('companiesAdmin', 'PagesController@companiesAdmin')->name('companiesAdmin');
+Route::get('admin/internshipAdmin', 'PagesController@internshipAdmin')->name('internshipAdmin');
+Route::get('admin/studiesAdmin', 'PagesController@studiesAdmin')->name('studiesAdmin');
+Route::get('admin/schoolsAdmin', 'PagesController@schoolsAdmin')->name('schoolsAdmin');
+Route::get('admin/companiesAdmin', 'PagesController@companiesAdmin')->name('companiesAdmin');
 
 
 // Model Routes...

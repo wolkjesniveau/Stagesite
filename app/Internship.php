@@ -13,4 +13,28 @@ class Internship extends Model
         'status_id',
         'study_id',
     ];
+
+    // Werkt
+    public function status()
+    {
+        return $this->belongsTo('App\Status');
+    }
+
+
+    public function InternshipUsers()
+    {
+        return $this->hasMany('App\InternshipUser');
+    }
+
+    // Werkt
+    public function contact()
+    {
+        return $this->belongsTo('App\Contacts');
+    }
+
+    // Werkt
+    public function Study()
+    {
+        return $this->belongsTo('App\Study');
+    }
 }

@@ -8,7 +8,6 @@
 
     <h1>Admin schools pagina</h1>
 
-
 @stop
 
 @section('footer')

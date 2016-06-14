@@ -10,4 +10,5 @@ class Tools extends Model
         'naam',
         'omschrijving'
     ];
+
 }
