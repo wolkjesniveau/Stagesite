@@ -8,7 +8,8 @@ class Cohort extends Model
 {
     protected $fillable = [
         'name',
-        'schoolyear'
+        'schoolyear',
+        'crebo_id',
     ];
 
 

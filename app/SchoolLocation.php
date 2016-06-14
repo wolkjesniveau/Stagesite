@@ -10,6 +10,7 @@ class SchoolLocation extends Model
         'streetname',
         'postcode',
         'location',
+        'school_id'
     ];
 
     public function locations()

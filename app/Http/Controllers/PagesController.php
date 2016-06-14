@@ -46,8 +46,8 @@ class PagesController extends Controller
         return view('admin.internshipAdmin');
     }
 
-    public function companiesAdmin()
+    public function studiesAdmin()
     {
-        return view('admin.companies');
+        return view('admin.studiesAdmin');
     }
 }
