@@ -54,4 +54,8 @@ class PagesController extends Controller
     {
         return view('admin.companiesAdmin');
     }
+    public function schoolsAdmin()
+    {
+        return view('admin.schoolsAdmin');
+    }
 }

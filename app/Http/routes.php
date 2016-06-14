@@ -22,6 +22,7 @@ Route::get('register', 'PagesController@register')->name('register');
 Route::get('admin', 'PagesController@admin')->name('admin');
 Route::get('internshipAdmin', 'PagesController@internshipAdmin')->name('internshipAdmin');
 Route::get('studiesAdmin', 'PagesController@studiesAdmin')->name('studiesAdmin');
+Route::get('schoolsAdmin', 'PagesController@schoolsAdmin')->name('schoolsAdmin');
 Route::get('companiesAdmin', 'PagesController@companiesAdmin')->name('companiesAdmin');
 
 
