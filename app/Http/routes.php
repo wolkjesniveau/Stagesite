@@ -23,6 +23,12 @@ Route::get('admin/internshipAdmin', 'PagesController@internshipAdmin')->name('in
 Route::get('admin/studiesAdmin', 'PagesController@studiesAdmin')->name('studiesAdmin');
 Route::get('admin/schoolsAdmin', 'PagesController@schoolsAdmin')->name('schoolsAdmin');
 Route::get('admin/companiesAdmin', 'PagesController@companiesAdmin')->name('companiesAdmin');
+Route::get('admin', 'AdminController@admin')->name('admin');
+Route::get('internshipAdmin', 'AdminController@internshipAdmin')->name('internshipAdmin');
+Route::get('studiesAdmin', 'AdminController@studiesAdmin')->name('studiesAdmin');
+Route::get('schoolsAdmin', 'AdminController@schoolsAdmin')->name('schoolsAdmin');
+Route::get('companiesAdmin', 'AdminController@companiesAdmin')->name('companiesAdmin');
+Route::get('toolsAdmin', 'AdminController@toolsAdmin')->name('toolsAdmin');
 
 
 // Model Routes...

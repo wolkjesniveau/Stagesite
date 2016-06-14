@@ -9,11 +9,9 @@ use App\Http\Requests;
 
 class StudiesController extends Controller
 {
-    public function Index()
+    public function studiesAdmin()
     {
-        return View::make('admin.studiesAdmin') ->with('$studies', Study::all());
-
-
+        return view('admin.studiesAdmin')->with('studies', Study::all());
     }
 
 }
