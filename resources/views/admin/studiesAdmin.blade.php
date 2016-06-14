@@ -2,6 +2,13 @@
 
 @section('content')
 
+    <?php
+
+    $studies = \App\Contacts::all();
+
+    ?>
+
+
 
 
 @endsection

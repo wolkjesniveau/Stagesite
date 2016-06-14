@@ -21,6 +21,7 @@ Route::get('register', 'PagesController@register')->name('register');
 // ROLE CHECK MUST BE ADDED WHERE WHEN DATABASE IS CORRECT
 Route::get('admin', 'PagesController@admin')->name('admin');
 Route::get('internshipAdmin', 'PagesController@internshipAdmin')->name('internshipAdmin');
+Route::get('studiesAdmin', 'PagesController@studiesAdmin')->name('studiesAdmin');
 
 
 Route::get('internships', 'InternshipsController@index');

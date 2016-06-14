@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class StudiesTableSeeder extends Seeder
+class StatusTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,9 +11,8 @@ class StudiesTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Study::create([
-            'location_id' => 1,
-            'cohort_id' => 1
+        \app\Status::create([
+            'status' => 'lit'
         ]);
     }
 }

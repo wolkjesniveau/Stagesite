@@ -11,7 +11,7 @@ class SchoolsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('schools')->insert([
+        \App\School::create([
             'name' => 'Zadkine'
         ]);
     }

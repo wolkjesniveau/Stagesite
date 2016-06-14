@@ -11,7 +11,7 @@ class CrebosTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Crebos')->insert([
+        \App\Crebo::create([
             'name' => 'Media',
             'number' => 1
         ]);

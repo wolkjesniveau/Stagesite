@@ -11,7 +11,7 @@ class CohortsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Cohorts')->insert([
+        \App\Cohort::create([
             'name' => 'Media2',
             'schoolyear' => 'Year 2',
             'crebo_id' => 1
