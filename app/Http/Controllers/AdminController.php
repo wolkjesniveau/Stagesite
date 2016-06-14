@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Internship;
 use App\Study;
+use App\Tool;
+use App\Tools;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,7 +19,7 @@ class AdminController extends Controller
 
     public function internshipAdmin()
     {
-        return view('admin.internshipAdmin')->with('internships', Internship::all());
+        return view('admin.internship')->with('internships', Internship::all());
     }
 
 
@@ -31,6 +33,11 @@ class AdminController extends Controller
     }
     public function studiesAdmin()
     {
-        return view('admin.studiesAdmin')->with('studies', Study::all());
+        return view('admin.studies')->with('studies', Study::all());
+    }
+
+    public function toolsAdmin()
+    {
+        return view('admin.tools')->with('tools', Tool::all());
     }
 }
