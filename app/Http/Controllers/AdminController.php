@@ -23,15 +23,15 @@ class AdminController extends Controller
     }
 
 
-    public function companiesAdmin()
+    public function companies()
     {
-        return view('admin.companiesAdmin');
+        return view('admin.companies');
     }
-    public function schoolsAdmin()
+    public function schools()
     {
-        return view('admin.schoolsAdmin');
+        return view('admin.schools');
     }
-    public function studiesAdmin()
+    public function studies()
     {
         return view('admin.studies')->with('studies', Study::all());
     }
