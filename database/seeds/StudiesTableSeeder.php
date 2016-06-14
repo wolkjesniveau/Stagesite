@@ -13,7 +13,8 @@ class StudiesTableSeeder extends Seeder
     {
         \App\Study::create([
             'location_id' => 1,
-            'cohort_id' => 1
+            'cohort_id' => 1,
+            'crebo_id' => 1
         ]);
     }
 }

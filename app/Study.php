@@ -8,7 +8,8 @@ class Study extends Model
 {
     protected $fillable = [
         'location_id',
-        'cohort_id'
+        'cohort_id',
+        'crebo_id'
     ];
 
 

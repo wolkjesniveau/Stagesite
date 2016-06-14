@@ -18,6 +18,8 @@ class CreateStudiesTable extends Migration
             $table->foreign('location_id')->references('id')->on('school_locations');
             $table->unsignedInteger('cohort_id');
             $table->foreign('cohort_id')->references('id')->on('cohorts');
+            $table->unsignedInteger('crebo_id');
+            $table->foreign('crebo_id')->references('id')->on('crebos');
             $table->timestamps();
         });
     }

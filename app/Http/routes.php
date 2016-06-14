@@ -16,9 +16,8 @@ Route::get('/', 'PagesController@welcome')->name('welcome');
 Route::get('companies', 'PagesController@companies')->name('companies');
 Route::get('company', 'PagesController@company')->name('company');
 Route::get('master', 'PagesController@master')->name('master');
-//Route::get('login', 'PagesController@login')->name('login');
 Route::get('register', 'PagesController@register')->name('register');
-// ROLE CHECK MUST BE ADDED WHERE WHEN DATABASE IS CORRECT
+// ROLE CHECK MUST BE ADDED HERE WHEN DATABASE IS CORRECT
 Route::get('admin', 'PagesController@admin')->name('admin');
 Route::get('internshipAdmin', 'PagesController@internshipAdmin')->name('internshipAdmin');
 Route::get('studiesAdmin', 'PagesController@studiesAdmin')->name('studiesAdmin');
@@ -26,10 +25,13 @@ Route::get('schoolsAdmin', 'PagesController@schoolsAdmin')->name('schoolsAdmin')
 Route::get('companiesAdmin', 'PagesController@companiesAdmin')->name('companiesAdmin');
 
 
+// Model Routes...
 Route::get('internships', 'InternshipsController@index');
 Route::get('studies', 'StudiesController@index');
 
 
+
+// Login Routers...
 $this->get('login', 'Auth\AuthController@showLoginForm')->name('login');
 $this->post('login', 'Auth\AuthController@login')->name('auth.login');
 $this->get('logout', 'Auth\AuthController@logout')->name('logout');

@@ -14,7 +14,6 @@ class CohortsTableSeeder extends Seeder
         \App\Cohort::create([
             'name' => 'Media2',
             'schoolyear' => 'Year 2',
-            'crebo_id' => 1
         ]);
     }
 }
