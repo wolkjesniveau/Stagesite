@@ -33,6 +33,7 @@ Route::get('companiesAdmin', 'AdminController@companiesAdmin')->name('companiesA
 Route::get('toolsIndex', 'ToolsController@Index')->name('toolsIndex');
 Route::get('toolsEdit/{id}', 'ToolsController@Edit')->name('tools-edit');
 Route::post('tool/{id}', 'ToolsController@update')->name('tool.edit');
+Route::get('toolsCreate', 'ToolsController@Create')->name('tools.create');
 
 
 
