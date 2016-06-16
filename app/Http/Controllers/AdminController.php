@@ -17,27 +17,37 @@ class AdminController extends Controller
         return view('admin.admin');
     }
 
+    /* INTERNSHIP SECTION */
     public function internshipAdmin()
     {
         return view('admin.internship')->with('internships', Internship::all());
     }
 
+    /* COMPANIES SECTION */
+    public function companiesAdmin()
+    {
+        return view('admin.companiesAdmin');
+    }
 
-    public function companies()
+    /* SCHOOLS SECTION */
+    public function schoolsAdmin()
     {
-        return view('admin.companies');
+        return view('admin.schoolsAdmin');
     }
-    public function schools()
-    {
-        return view('admin.schools');
-    }
-    public function studies()
+
+    /* STUDIES SECTION */
+    public function studiesAdmin()
     {
         return view('admin.studies')->with('studies', Study::all());
     }
 
+    /* TOOLS SECTION */
     public function toolsAdmin()
     {
         return view('admin.tools')->with('tools', Tool::all());
+    }
+    public function toolsUpdate()
+    {
+        return view('admin.tools-edit')->with('tools', Tool::all());
     }
 }

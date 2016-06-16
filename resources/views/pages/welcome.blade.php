@@ -5,7 +5,7 @@ Welkom
 @stop
 
 @section('content')
-    <div class="title">Welkom</div>
+    <div class="pagetitle">Welkom</div>
         <div class="stageblokjes">
             <div class="col-md-4 stageblok">(afbeelding)<br><br>Wilt u een leerbedrijf worden?</div>
                 <div class="col-md-4 stageblok">(afbeelding)<br><br> Hoe vind ik een stagiare?</div>

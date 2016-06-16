@@ -13,7 +13,7 @@ class CrebosTableSeeder extends Seeder
     {
         \App\Crebo::create([
             'name' => 'Media',
-            'number' => 1
+            'number' => 95311
         ]);
     }
 }

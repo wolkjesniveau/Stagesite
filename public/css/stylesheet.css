@@ -118,7 +118,7 @@ a:hover {
 }
 
 .content {
-    text-align: center;
+    text-align: left;
     display: inline-block;
 }
 
@@ -137,4 +137,9 @@ a:hover {
 .stageblok {
     min-height: 285px;
     height: 285px;
+}
+.pagetitle {
+    text-align: center;
+    font-weight: 400;
+    font-size: 48px;
 }
