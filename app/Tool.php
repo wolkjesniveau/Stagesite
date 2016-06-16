@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tools extends Model
+class Tool extends Model
 {
     protected $fillable = [
         'naam',
-        'omschrijving'
+        'omschrijving',
+        'status_id'
     ];
+
 }

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CohortsTableSeeder extends Seeder
+class ReviewTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,9 +11,9 @@ class CohortsTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Cohort::create([
-            'name' => 'Media2',
-            'schoolyear' => 'Year 2',
+        Review::create([
+            'review' => 'Lorem Ipsum blablablabla',
+            '3,1' => '1'
         ]);
     }
 }

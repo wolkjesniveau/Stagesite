@@ -13,8 +13,9 @@ class SchoolLocation extends Model
         'school_id'
     ];
 
-    public function locations()
+    // Werkt
+    public function School()
     {
-        return $this->hasMany('App/School', 'App/Study');
+        return $this->belongsTo('App\School');
     }
 }

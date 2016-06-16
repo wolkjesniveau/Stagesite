@@ -13,4 +13,11 @@ class Company extends Model
         'plaats',
         'telnr'
     ];
+
+    // Werkt
+    public function contacts()
+    {
+        return $this->hasMany('App\Contacts');
+    }
+
 }

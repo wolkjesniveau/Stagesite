@@ -12,8 +12,10 @@ class StudiesTableSeeder extends Seeder
     public function run()
     {
         \App\Study::create([
-            'location_id' => 1,
-            'cohort_id' => 1
+            'name_study' => 'Media ontwikkerlaar',
+            'school_location_id' => 1,
+            'cohort_id' => 1,
+            'crebo_id' => 1
         ]);
     }
 }

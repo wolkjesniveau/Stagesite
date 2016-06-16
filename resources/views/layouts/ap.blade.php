@@ -35,12 +35,8 @@
         {{-- HEADER MID --}}
         <div class="header header-mid">
             <div class="header-search">
-                {{Form::open(array('url' => 'admin/search', 'method' => 'post', 'id' => 'search_form'))}}
-                {{Form::text('keyword',null,array(
-                'class' => 'search',
-                'placeholder' => 'Zoeken op de website'
-                ))}}<br>
-                {{Form::submit()}}
+                <input class="search" type="text" name="search" placeholder=" Zoeken op de website">
+                <button class="search-button">Zoek</button>
             </div>
         </div>
 

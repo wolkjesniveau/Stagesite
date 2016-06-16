@@ -9,8 +9,11 @@ class Cohort extends Model
     protected $fillable = [
         'name',
         'schoolyear',
-        'crebo_id',
     ];
 
+    public function crebo()
+    {
+        return $this->hasMany('App/Crebo');
+    }
 
 }
