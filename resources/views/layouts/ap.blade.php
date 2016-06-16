@@ -43,7 +43,8 @@
         {{-- HEADER RIGHT --}}
         <div class="header header-right bold">
             @if (Auth::guest())
-                <a href="{{ route('login') }}">inloggen/registreren</a>
+                <li><a href="{{ route('login') }}"><i class="fa fa-key fa-fw"></i> Log in</a></li>
+                <li><a href="{{ route('register') }}"><i class="fa fa-user-plus fa-fw"></i> Register</a></li>
             @else
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     {{ Auth::user()->name }}

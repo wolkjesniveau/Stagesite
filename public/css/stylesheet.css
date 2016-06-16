@@ -102,6 +102,9 @@ footer p {
     margin: 0;
 }
 /* STYLING VAN LINKS */
+.btn-primary {
+    color: #fff !important;
+}
 a, a:link, a:visited{
     text-decoration: none !important;
     color: #232323;

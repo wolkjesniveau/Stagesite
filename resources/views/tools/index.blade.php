@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.ap')
 
 @section('content')
 
@@ -29,7 +29,7 @@
                         <!-- show the nerd (uses the show method found at GET /nerds/{id} -->
 
                         <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
-                        <a class="btn btn-small btn-info" href="{{ route('tools-edit', $value->id) }}">Edit this Tool</a>
+                        <a class="btn btn-small btn-primary" href="{{ route('tools-edit', $value->id) }}">Edit this Tool</a>
 
                     </td>
                 </tr>
