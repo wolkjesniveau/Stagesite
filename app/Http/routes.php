@@ -28,19 +28,10 @@ Route::get('internshipAdmin', 'AdminController@internshipAdmin')->name('internsh
 Route::get('studiesAdmin', 'AdminController@studiesAdmin')->name('studiesAdmin');
 Route::get('schoolsAdmin', 'AdminController@schoolsAdmin')->name('schoolsAdmin');
 Route::get('companiesAdmin', 'AdminController@companiesAdmin')->name('companiesAdmin');
-Route::get('toolsAdmin', 'AdminController@toolsAdmin')->name('toolsAdmin');
-Route::get('tools-edit', 'AdminController@tools-edit')->name('tools-edit');
+Route::get('toolsIndex', 'ToolsController@Index')->name('toolsIndex');
+Route::get('nerd/edit/{id}', 'ToolsController@Edit', array())->name('tools-edit');
 
 
-Route::get('tool/edit/{id}', array('as' => 'tool.edit', function($id)
-{
-    // return our view and tool information
-    return View::make('admin.toolUpdate') // pulls app/views/toolUpdate.blade.php
-    ->with('tool', \App\Tool::find($id));
-}));
-Route::post('tool/edit', function() {
-    // process our form
-});
 
 // Model Routes...
 Route::get('internships', 'InternshipsController@index');
