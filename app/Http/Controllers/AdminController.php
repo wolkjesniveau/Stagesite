@@ -41,13 +41,5 @@ class AdminController extends Controller
         return view('admin.studies')->with('studies', Study::all());
     }
 
-    /* TOOLS SECTION */
-    public function toolsAdmin()
-    {
-        return view('admin.tools')->with('tools', Tool::all());
-    }
-    public function toolsUpdate()
-    {
-        return view('admin.tools-edit')->with('tools', Tool::all());
-    }
+
 }
