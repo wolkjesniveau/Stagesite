@@ -18,4 +18,15 @@ class User extends Authenticatable
         'contact_id'
     ];
 
+    // Werkt
+    public function role()
+    {
+        return $this->belongsTo('App\Role');
+    }
+
+    // Werkt
+    public function Contact()
+    {
+        return $this->belongsTo('App\Contacts');
+    }
 }

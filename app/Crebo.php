@@ -11,8 +11,4 @@ class Crebo extends Model
         'number'
     ];
 
-    public function crebo()
-    {
-        return $this->hasMany('App/Cohort');
-    }
 }

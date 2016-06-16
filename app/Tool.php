@@ -11,4 +11,5 @@ class Tool extends Model
         'omschrijving',
         'status_id'
     ];
+
 }

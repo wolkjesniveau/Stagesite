@@ -12,6 +12,14 @@ class Contacts extends Model
         'name',
         'email',
         'tel',
-        'mobile'
+        'mobile',
+        'company_id'
     ];
+
+    // Werkt
+    public function company()
+    {
+        return $this->belongsTo('App\Company');
+    }
+
 }
