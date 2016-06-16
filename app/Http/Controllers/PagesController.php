@@ -35,27 +35,4 @@ class PagesController extends Controller
     {
         return view('auth.register');
     }
-
-    public function admin()
-    {
-        return view('admin.admin');
-    }
-
-    public function internshipAdmin()
-    {
-        return view('admin.internshipAdmin');
-    }
-
-    public function studiesAdmin()
-    {
-        return view('admin.studiesAdmin');
-    }
-    public function companiesAdmin()
-    {
-        return view('admin.companiesAdmin');
-    }
-    public function schoolsAdmin()
-    {
-        return view('admin.schoolsAdmin');
-    }
 }

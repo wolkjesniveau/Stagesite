@@ -13,7 +13,7 @@
 
 
 Route::get('/', 'PagesController@welcome')->name('welcome');
-Route::get('companies', 'PagesController@companies')->name('companies');
+//Route::get('companies', 'PagesController@companies')->name('companies');
 Route::get('company', 'PagesController@company')->name('company');
 Route::get('master', 'PagesController@master')->name('master');
 Route::get('register', 'PagesController@register')->name('register');
@@ -36,7 +36,24 @@ Route::post('tool/{id}', 'ToolsController@update')->name('tool.edit');
 Route::get('toolsCreate', 'ToolsController@Create')->name('tools.create');
 Route::get('toolsShow/{id}', 'ToolsController@Show')->name('tools-show');
 
+//Company Routes
+Route::post('companies', 'CompaniesController@store');
+Route::get('companies/create', 'CompaniesController@create');
+Route::get('companies/{id}/edit', 'CompaniesController@edit');
+Route::put('companies','CompaniesController@update');
+Route::delete('companies/{id}','CompaniesController@destroy');
+Route::resource('companies', 'CompaniesController', ['only'=>['index','create','store']]);
 
+
+Route::get('tool/edit/{id}', array('as' => 'tool.edit', function($id)
+{
+    // return our view and tool information
+    return View::make('admin.toolUpdate') // pulls app/views/toolUpdate.blade.php
+    ->with('tool', \App\Tool::find($id));
+}));
+Route::post('tool/edit', function() {
+    // process our form
+});
 
 // Model Routes...
 Route::get('internships', 'InternshipsController@index');
