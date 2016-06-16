@@ -8,7 +8,7 @@
         <div class="col-md-6">
             <h3>{{ $tool->naam }}</h3>
             <p>{{ $tool->omschrijving }}</p>
-            <a href="{{ route('tools-edit') }}">Bewerken</a>
+            <a href="{{ route('tools-edit', $tool->id) }}">Bewerken</a>
         </div>
     @endforeach
 

@@ -3,31 +3,26 @@
 @section('content')
 
     <div class="form-group col-md-12">
-        {{--    {{ Form::open(array('url' => 'admin.tools-edit', 'files' => true)) }}
-            {{ Form::label('Naam:') }}
-            {{ Form::text('naam') }}
-            <br>
-            {{ Form::label('Omschrijving:') }}
-            {{ Form::text('omschrijving') }}
-            <br>
-            {{ Form::submit('submit') }}
-            {{ Form::close() }}--}}
 
-
-        {{ Form::model($tools, array('route' => 'tool.edit', $tools->id)) }}
-
+        {{ Form::model($tools, array('route' => ['tool.edit', $tools->id])) }}
+        <div class="col-md-6">
                 <!-- name -->
-        {{ Form::label('naam', 'Naam') }}
+        <div class="col-md-12 ">
+        {{ Form::label('naam', 'Naam:') }}
+            <br>
         {{ Form::text('naam') }}
-
+        </div>
                 <!-- omschrijving -->
-        {{ Form::label('omschrijving', 'Omschrijving') }}
-        {{ Form::email('omschrijving') }}
-
+        <div class="col-md-12">
+        {{ Form::label('omschrijving', 'Omschrijving:') }}
+            <br>
+        {{ Form::textarea('omschrijving') }}
+        </div>
+        <div class="col-md-12">
         {{ Form::submit('Update Tool!') }}
-
+        </div>
         {{ Form::close() }}
-
+        </div>
     </div>
 
 @endsection
