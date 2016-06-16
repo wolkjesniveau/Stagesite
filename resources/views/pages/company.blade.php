@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-<div class="title">Bedrijfnaam</div>
+<div class="pagetitle">Bedrijfnaam</div>
 
     <div class="col-md-6">
         Plaatje wat het bedrijf vertegenwoordigd
