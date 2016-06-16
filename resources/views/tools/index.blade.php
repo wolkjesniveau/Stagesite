@@ -1,4 +1,4 @@
-@extends('layouts.ap')
+@extends('layouts.app')
 
 @section('content')
 
@@ -27,6 +27,8 @@
                         <!-- we will add this later since its a little more complicated than the other two buttons -->
 
                         <!-- show the nerd (uses the show method found at GET /nerds/{id} -->
+                        <a class="btn btn-small btn-primary" href="{{ route('tools-show', $value->id) }}">Show this Tool</a>
+
 
                         <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
                         <a class="btn btn-small btn-primary" href="{{ route('tools-edit', $value->id) }}">Edit this Tool</a>

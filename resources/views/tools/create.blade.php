@@ -1,4 +1,4 @@
-@extends('layouts.ap')
+@extends('layouts.app')
 
 @section('content')
 
@@ -11,7 +11,7 @@
     <!-- if there are creation errors, they will show here -->
     {{ HTML::ul($errors->all()) }}
 
-    {{ Form::open(array('url' => 'tool')) }}
+    {{ Form::open(array('url' => 'toolsEdit')) }}
 
     <div class="form-group">
         {{ Form::label('naam', 'Naam') }}
