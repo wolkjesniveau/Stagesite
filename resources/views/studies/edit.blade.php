@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('master')
 
 @section('content')
     <li><a href="{{route('study.index') }}">Bekijk alle opleidingen</a></li>
