@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    <li><a href="{{ URL::to('toolsIndex') }}">Bekijk alle Tools</a></li>
+    <li><a href="{{ URL::to('toolsCreate') }}">Maak een Tool aan</a></li>
 
-    <div class="form-group col-md-12">
+    <div class="form-group col-md-12 jumbotron text-center">
 
-        {{ Form::model($tools, array('route' => ['tool.edit', $tools->id])) }}
-        <div class="col-md-6">
+        {{ Form::model($tools, array('route' => ['tools.index', $tools->id])) }}
+        <div class="col-md-12">
                 <!-- name -->
         <div class="col-md-12 ">
         {{ Form::label('naam', 'Naam:') }}
@@ -19,7 +21,7 @@
         {{ Form::textarea('omschrijving') }}
         </div>
         <div class="col-md-12">
-        {{ Form::submit('Update Tool!') }}
+        {{ Form::submit('Update Tool!')}}
         </div>
         {{ Form::close() }}
         </div>
