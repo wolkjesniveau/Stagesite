@@ -20,20 +20,30 @@ Route::get('register', 'PagesController@register')->name('register');
 // ROLE CHECK MUST BE ADDED HERE WHEN DATABASE IS CORRECT
 Route::get('admin', 'PagesController@admin')->name('admin');
 Route::get('admin/internshipAdmin', 'PagesController@internshipAdmin')->name('internshipAdmin');
-Route::get('admin/studiesAdmin', 'PagesController@studiesAdmin')->name('studiesAdmin');
 Route::get('admin/schoolsAdmin', 'PagesController@schoolsAdmin')->name('schoolsAdmin');
 Route::get('admin', 'AdminController@admin')->name('admin');
 Route::get('internshipAdmin', 'AdminController@internshipAdmin')->name('internshipAdmin');
-Route::get('studiesAdmin', 'AdminController@studiesAdmin')->name('studiesAdmin');
 Route::get('schoolsAdmin', 'AdminController@schoolsAdmin')->name('schoolsAdmin');
 Route::get('companiesAdmin', 'AdminController@companiesAdmin')->name('companiesAdmin');
 
 /* TOOLS SECTION */
-Route::get('toolsIndex', 'ToolsController@Index')->name('toolsIndex');
-Route::get('toolsEdit/{id}', 'ToolsController@Edit')->name('tools-edit');
-Route::post('tool/{id}', 'ToolsController@update')->name('tool.edit');
+Route::get('toolsIndex', 'ToolsController@Index')->name('tools.index');
 Route::get('toolsCreate', 'ToolsController@Create')->name('tools.create');
-Route::get('toolsShow/{id}', 'ToolsController@Show')->name('tools-show');
+Route::get('toolsShow/{id}', 'ToolsController@Show')->name('tools.show');
+Route::post('toolsIndex', 'ToolsController@Store')->name('tools.store');
+Route::get('toolsEdit/{id}', 'ToolsController@Edit')->name('tools.edit');
+Route::post('tool/{id}', 'ToolsController@Update')->name('tools.update');
+Route::delete('toolsIndex/{id}', 'ToolsController@Destroy')->name('tools.destroy');
+
+
+/* STUDIES SECTION */
+Route::get('studiesIndex', 'StudiesController@Index')->name('studies.index');
+Route::get('studiesCreate', 'StudiesController@Create')->name('studies.create');
+Route::get('studiesShow/{id}', 'StudiesController@Show')->name('studies.show');
+Route::post('studiesIndex', 'StudiesController@Store')->name('studies.store');
+Route::get('studiesEdit/{id}', 'StudiesController@Edit')->name('studies.edit');
+Route::post('study/{id}', 'StudiesController@Update')->name('studies.update');
+Route::delete('studiesIndex/{id}', 'StudiesController@Destroy')->name('studies.destroy');
 
 //Company Routes
 Route::post('companies', 'CompaniesController@store');
@@ -57,7 +67,6 @@ Route::post('tool/edit', function() {
 
 // Model Routes...
 Route::get('internships', 'InternshipsController@index');
-Route::get('studies', 'StudiesController@index');
 
 
 

@@ -3,24 +3,24 @@
 @section('content')
 
 
-    <li><a href="{{ URL::to('toolsIndex') }}">View All Tools</a></li>
-    <li><a href="{{ URL::to('toolsCreate') }}">Create a Tool</a>
+    <li><a href="{{ URL::to('toolsIndex') }}">Bekijk alle Tools</a></li>
+    <li><a href="{{ URL::to('toolsCreate') }}">Maak een Tool aan</a></li>
 
-    <h2>Create a Tool</h2>
+    <h2>Maak een Tool aan</h2>
 
-    <!-- if there are creation errors, they will show here -->
-    {{ HTML::ul($errors->all()) }}
+{{--    <!-- if there are creation errors, they will show here -->
+    {{ HTML::ul($errors->all()) }}--}}
 
-    {{ Form::open(array('url' => 'toolsEdit')) }}
+    {{ Form::open(array('url' => 'toolsIndex')) }}
 
     <div class="form-group">
         {{ Form::label('naam', 'Naam') }}
-        {{ Form::text('naam', Input::old('naam'), array('class' => 'form-control')) }}
+        {{ Form::text('naam', \Illuminate\Support\Facades\Input::old('naam'), array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('omschrijving', 'Omschrijving') }}
-        {{ Form::email('omschrijving', Input::old('omschrijving'), array('class' => 'form-control')) }}
+        {{ Form::text('omschrijving', \Illuminate\Support\Facades\Input::old('omschrijving'), array('class' => 'form-control')) }}
     </div>
 
 

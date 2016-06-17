@@ -13,6 +13,8 @@ class Study extends Model
         'crebo_id'
     ];
 
+
+
     // Werkt
     public function school_location()
     {

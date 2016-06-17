@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Tool;
-use Illuminate\Http\Request;
+use Dotenv\Validator;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
+use Symfony\Component\Console\Input\Input;
 
 class ToolsController extends Controller
 {
@@ -30,7 +33,7 @@ class ToolsController extends Controller
     }
     public function Create()
     {
-        return View::make('tools.create');
+        return View('tools.create');
     }
 
     /**
@@ -82,7 +85,30 @@ class ToolsController extends Controller
 
     public function update($id)
     {
-        //
+        // validate
+        // read more on validation at http://laravel.com/docs/validation
+        $rules = array(
+            'naam'              => 'required',
+            'omschrijving'      => 'required',
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return Redirect::to('nerds/' . $id . '/edit')
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
+        } else {
+            // store
+            $tools = Tool::find($id);
+            $tools->naam       = Input::get('naam');
+            $tools->omschrijving      = Input::get('omschrijving');
+            $tools->save();
+
+            // redirect
+            Session::flash('message', 'Successfully updated Tool!');
+            return Redirect::to('toolsIndex');
+        }
     }
 
     /**
@@ -93,7 +119,13 @@ class ToolsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete
+        $tools = Tool::find($id);
+        $tools->delete();
+
+        // redirect
+        Session::flash('message', 'Successfully deleted the tool!');
+        return Redirect::to('toolsIndex');
     }
 
 }

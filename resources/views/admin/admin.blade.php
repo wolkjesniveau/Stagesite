@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.ap')
 
 @section('content')
     <li><a href="{{ URL::to('internshipAdmin') }}">Overzicht van Stages</a></li>
