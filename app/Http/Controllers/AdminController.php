@@ -44,6 +44,7 @@ class AdminController extends Controller
 
     public function usersAdmin()
     {
+        
         return view('admin.users')->with('users', User::all());
     }
 }
