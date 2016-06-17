@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Study;
-use Dotenv\Validator;
+use Illuminate\Http\Request;
+use Validator;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
@@ -13,25 +14,38 @@ use Symfony\Component\Console\Input\Input;
 
 class StudiesController extends Controller
 {
+    private function validator($input)
+    {
+        return Validator::make($input, [
+            'name_study' => 'required',
+        ]);
+    }
+
     /**
-     * @return $this
+     * Index View Study
+     * @return View
      */
     public function Index()
     {
-        return view('studies.index')->with('studies', Study::all());
+        $studies = Study::all();
+        return view('studies.index', compact('studies'));
     }
 
     /**
+     * Edit View Study
      * @param $id
-     * @return $this
+     * @return View
      */
     public function Edit($id)
     {
-        // return our view and Study information
-        return View('studies.edit')
-        ->with('studies', \App\Study::find($id));
-
+        $study = Study::findOrFail($id);
+        return View('studies.edit', compact('study'));
     }
+
+    /**
+     * Create View Study
+     * @return View
+     */
     public function Create()
     {
         return View('studies.create');
@@ -42,93 +56,65 @@ class StudiesController extends Controller
      *
      * @return Response
      */
-    public function Store()
+    public function Store(Request $request)
     {
         // validate
-        $rules = array(
-            'name_study'       => 'required',
-        );
-        $validator = Validato::make(Input::all(), $rules);
-
+        $validator = $this->validator($request->all());
         // process the login
         if ($validator->fails()) {
-            return Redirect::to('studies.create')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {
+            $this->throwValidationException($request, $validator);
             // store
-            $studies = new Study();
-            $studies->name_study      = Input::get('naam');
-            $studies->school_location_id      = Input::get('school_location_id');
-            $studies->cohort_id      = Input::get('cohort_id');
-            $studies->crebo_id      = Input::get('crebo_id');
-            $studies->save();
-
-            // redirect
-            Session::flash('message', 'Successfully created Study!');
-            return Redirect::to('studiesIndex');
-        }}
+        }
+        Study::create($request->all());
+        // redirect
+        Session::flash('message', 'Successfully created Study!');
+        return redirect(route('study.index'));
+    }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
+     * Show View Study
+     * @param $id
+     * @return $this
      */
     public function Show($id)
     {
         // get the Study
-        $studies = Study::find($id);
-
+        $study = Study::find($id);
         // show the view and pass the study to it
-        return View('studies.show')
-            ->with('studies', $studies);
+        return View('studies.show', compact('study'));
     }
 
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        // validate
-        // read more on validation at http://laravel.com/docs/validation
-        $rules = array(
-            'name_study'              => 'required',
-        );
-        $validator = Validator::make(Input::all(), $rules);
+        $validator = $this->validator($request->all());
 
         // process the login
         if ($validator->fails()) {
-            return Redirect::to('studyIndex/' . $id . '/edit')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {
+            $this->throwValidationException($request, $validator);
             // store
-            $studies = Study::find($id);
-            $studies->name_study      = Input::get('naam');
-            $studies->school_location_id      = Input::get('school_location_id');
-            $studies->cohort_id      = Input::get('cohort_id');
-            $studies->crebo_id      = Input::get('crebo_id');
-            $studies->save();
-
-            // redirect
-            Session::flash('message', 'Successfully updated Study!');
-            return Redirect::to('studiesIndex');
         }
+        // store
+        $study = Study::findOrFail($id);
+        $study->update($request->all());
+        // redirect
+        Session::flash('message', 'Successfully updated Study!');
+        return redirect(route('study.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function destroy($id)
     {
         // delete
-        $studies = Study::find($id);
-        $studies->delete();
-
+        $study = Study::find($id);
+        $study->delete();
         // redirect
         Session::flash('message', 'Successfully deleted the Study!');
-        return Redirect::to('studiesIndex');
+        return redirect(route('study.index'));
     }
 
 }
