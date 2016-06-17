@@ -21,7 +21,7 @@ class User extends Authenticatable
     // Werkt
     public function role()
     {
-        return $this->belongsTo('App\Role');
+        return $this->belongsToMany('App\Role');
     }
 
     // Werkt
@@ -29,4 +29,16 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Contacts');
     }
+
+    public function isAdmin()
+    {
+        return $this->role()->where('role_id', 5)->first();
+    }
+
+    public function isDocent()
+    {
+        return $this->role()->where('role_id', 4)->first();
+    }
+
+
 }
