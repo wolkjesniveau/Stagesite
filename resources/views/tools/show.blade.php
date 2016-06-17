@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('master')
 
 @section('content')
 
@@ -16,6 +16,5 @@
 
             <a class="btn btn-small btn-primary" href="{{ route('tools.edit', $tools->id) }}">Bewerk deze Tool</a>
         </div>
-
 
 @endsection

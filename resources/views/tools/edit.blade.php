@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('master.blade.php')
 
 @section('content')
     <li><a href="{{ URL::to('toolsIndex') }}">Bekijk alle Tools</a></li>
