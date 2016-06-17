@@ -22,7 +22,6 @@ Route::get('admin', 'PagesController@admin')->name('admin');
 Route::get('admin/internshipAdmin', 'PagesController@internshipAdmin')->name('internshipAdmin');
 Route::get('admin/studiesAdmin', 'PagesController@studiesAdmin')->name('studiesAdmin');
 Route::get('admin/schoolsAdmin', 'PagesController@schoolsAdmin')->name('schoolsAdmin');
-Route::get('admin/companiesAdmin', 'PagesController@companiesAdmin')->name('companiesAdmin');
 Route::get('admin', 'AdminController@admin')->name('admin');
 Route::get('internshipAdmin', 'AdminController@internshipAdmin')->name('internshipAdmin');
 Route::get('studiesAdmin', 'AdminController@studiesAdmin')->name('studiesAdmin');
@@ -39,10 +38,11 @@ Route::get('toolsShow/{id}', 'ToolsController@Show')->name('tools-show');
 //Company Routes
 Route::post('companies', 'CompaniesController@store');
 Route::get('companies/create', 'CompaniesController@create');
-Route::get('companies/{id}/edit', 'CompaniesController@edit');
+Route::get('companies/show/{id}', 'CompaniesController@show');
+Route::get('companies/edit/{id}', 'CompaniesController@edit');
 Route::put('companies','CompaniesController@update');
 Route::delete('companies/{id}','CompaniesController@destroy');
-Route::resource('companies', 'CompaniesController', ['only'=>['index','create','store']]);
+Route::resource('companies', 'CompaniesController');
 
 
 Route::get('tool/edit/{id}', array('as' => 'tool.edit', function($id)

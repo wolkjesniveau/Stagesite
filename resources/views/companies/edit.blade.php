@@ -6,31 +6,36 @@
 
 @section('content')
 
-    <<h1>Edit {{ $company->naam }}</h1>
+    <h1>Edit {{ $company->naam }}</h1>
 
-    {{ Form::model($company, array('route' => array('companies.update', $company->id), 'method' => 'PUT')) }}
+    {!! Form::open(['route' => ['companies.update', $company->id], 'method' => 'put']) !!}
 
     <div class="form-group">
         {{ Form::label('naam', 'Naam: ') }}
-        {{ Form::text('naam', null, array('class' => 'form-control')) }}
+        {{ Form::text('naam', $company->naam, ['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('address', 'Address: ') }}
-        {{ Form::email('address', null, array('class' => 'form-control')) }}
+        {{ Form::text('address', $company->address, ['class' => 'form-control']) }}
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('postcode', 'Postcode: ') }}
+        {{ Form::text('postcode', $company->postcode, ['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('plaats', 'Plaats: ') }}
-        {{ Form::select('plaats', null, array('class' => 'form-control')) }}
+        {{ Form::text('plaats', $company->plaats, ['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('telnr', 'Telefoonnummer: ') }}
-        {{ Form::select('telnr', null, array('class' => 'form-control')) }}
+        {{ Form::text('telnr', $company->telnr,['class' => 'form-control']) }}
     </div>
 
-    {{ Form::submit('Wijzigen', array('class' => 'btn btn-primary')) }}
+    {{ Form::submit('Wijzigen', ['class' => 'btn btn-primary']) }}
 
     {{ Form::close() }}
 @stop

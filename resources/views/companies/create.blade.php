@@ -8,34 +8,34 @@
 
     <h1>Admin bedrijven pagina</h1>
 
-    {{ Form::open(array('route' => 'companies')) }}
+    {{ Form::open(['route' => 'companies.store']) }}
 
     <div class="form-group">
         {{ Form::label('naam', 'Naam: ') }}
-        {{ Form::text('naam', Input::old('naam'), array('class' => 'form-control')) }}
-    </div>
+        {{ Form::text('naam', ('Naam'),['class' => 'form-control']) }}
+    </div>,
 
     <div class="form-group">
         {{ Form::label('address', 'address: ') }}
-        {{ Form::email('address', Input::old('address'), array('class' => 'form-control')) }}
+        {{ Form::text('address', ('Address'), ['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('postcode', 'Postcode: ') }}
-        {{ Form::select('postcode', Input::old('postcode'), array('class' => 'form-control')) }}
+        {{ Form::text('postcode',('Postcode'),['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('plaats', 'Plaats: ') }}
-        {{ Form::select('plaats', Input::old('plaats'), array('class' => 'form-control')) }}
+        {{ Form::text('plaats',('Plaats'), ['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('telnr', 'Telefoonnummer: ') }}
-        {{ Form::select('telnr', Input::old('telnr'), array('class' => 'form-control')) }}
+        {{ Form::text('telnr',('Telefoonnummer'), ['class' => 'form-control']) }}
     </div>
 
-    {{ Form::submit('Verzenden', array('class' => 'btn btn-primary')) }}
+    {{ Form::submit('Verzenden', ['class' => 'btn btn-primary']) }}
 
     {{ Form::close() }}
 @stop

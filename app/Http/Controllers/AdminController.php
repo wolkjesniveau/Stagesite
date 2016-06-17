@@ -23,12 +23,6 @@ class AdminController extends Controller
         return view('admin.internship')->with('internships', Internship::all());
     }
 
-    /* COMPANIES SECTION */
-    public function companiesAdmin()
-    {
-        return view('admin.companiesAdmin');
-    }
-
     /* SCHOOLS SECTION */
     public function schoolsAdmin()
     {

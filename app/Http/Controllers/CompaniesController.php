@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Company;
 use Illuminate\Support\Facades\View;
-use Illuminate\Validation\Validator;
+use Validator;
+use Input;
+use Redirect;
+use Session;
 
 use App\Http\Requests;
 
@@ -14,11 +17,11 @@ class CompaniesController extends Controller
     public function index()
     {
         // Haal alle bedrijven op
-        $companies = Company::all();
+        $company = Company::all();
 
         // View inladen met de bedrijven
         return View::make('companies.index')
-            ->with('companies', $companies);
+            ->with('companies', $company);
     }
 
     public function create()
@@ -34,9 +37,9 @@ class CompaniesController extends Controller
         $rules = array(
             'naam' => 'required|min:2|max:30',
             'address' => 'required',
-            'postcode' => 'required|max:6|min:6',
+            'postcode' => 'required',
             'plaats' => 'required',
-            'telnr' => 'required|numeric'
+            'telnr' => 'required'
         );
         $validator = Validator::make(Input::all(), $rules);
 
@@ -95,25 +98,19 @@ class CompaniesController extends Controller
         $rules = array(
             'naam' => 'required|min:2|max:30',
             'address' => 'required',
-            'postcode' => 'required|max:6|min:6',
+            'postcode' => 'required',
             'plaats' => 'required',
-            'telnr' => 'required|numeric'
+            'telnr' => 'required'
         );
         $validator = Validator::make(Input::all(), $rules);
 
-        // process the login
         if ($validator->fails()) {
-            return Redirect::to('nerds/' . $id . '/edit')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        }
-        if ($validator->fails()) {
-            return Redirect::to('companies.create')
-                ->withErrors($validator)
+            return Redirect::to('companies')
+                ->withErrors(dd($validator))
                 ->withInput(Input::except('password'));
         } else {
             // store
-            $company = new Company;
+            $company = Company::find($id);
             $company->naam = Input::get('naam');
             $company->address = Input::get('address');
             $company->postcode = Input::get('postcode');
