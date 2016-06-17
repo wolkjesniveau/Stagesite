@@ -3,18 +3,18 @@
 @section('content')
 
 
-    <li><a href="{{ URL::to('toolsIndex') }}">Bekijk alle Tools</a></li>
-    <li><a href="{{ URL::to('toolsCreate') }}">Maak een Tool aan</a></li>
+    <li><a href="{{ route('tool.index') }}">Bekijk alle Tools</a></li>
+    <li><a href="{{ route('tool.create') }}">Maak een Tool aan</a></li>
 {{--
         <h1>Showing {{ $tools->naam }}</h1>--}}
 
         <div class="jumbotron text-center">
-            <h2>{{ $tools->naam }}</h2>
+            <h2>{{ $tool->naam }}</h2>
             <p>
-                <strong>Omschrijving:</strong> {{ $tools->omschrijving }}
+                <strong>Omschrijving:</strong> {{ $tool->omschrijving }}
             </p>
 
-            <a class="btn btn-small btn-primary" href="{{ route('tools.edit', $tools->id) }}">Bewerk deze Tool</a>
+            <a class="btn btn-small btn-primary" href="{{ route('tool.edit', $tool->id) }}">Bewerk deze Tool</a>
         </div>
 
 

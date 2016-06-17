@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <li><a href="{{ URL::to('toolsIndex') }}">Bekijk alle Tools</a></li>
-    <li><a href="{{ URL::to('toolsCreate') }}">Maak een Tool aan</a></li>
+    <li><a href="{{ route('tool.index') }}">Bekijk alle Tools</a></li>
+    <li><a href="{{ route('tool.create') }}">Maak een Tool aan</a></li>
 
     <div class="form-group col-md-12 jumbotron text-center">
 
-        {{ Form::model($tools, array('route' => ['tools.index', $tools->id])) }}
+        {{ Form::model($tool, array('route' => ['tool.update', $tool->id], 'method' => 'put')) }}
         <div class="col-md-12">
                 <!-- name -->
         <div class="col-md-12 ">
