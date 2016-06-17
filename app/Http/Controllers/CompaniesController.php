@@ -4,126 +4,123 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Company;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
-use Illuminate\Validation\Validator;
-
+use Validator;
 use App\Http\Requests;
 
 class CompaniesController extends Controller
 {
+    private function validator($input)
+    {
+        return Validator::make($input, [
+            'naam' => 'required|min:2|max:30',
+            'address' => 'required',
+            'postcode' => 'required|max:10|min:6',
+            'plaats' => 'required',
+            'telnr' => 'required|numeric'
+        ]);
+    }
+
+    /**
+     * Index View Companies
+     * @return mixed
+     */
     public function index()
     {
         // Haal alle bedrijven op
         $companies = Company::all();
-
         // View inladen met de bedrijven
-        return View::make('companies.index')
-            ->with('companies', $companies);
+        return View::make('companies.index', compact('companies'));
     }
 
+    /**
+     * Create View Companies
+     * @return View
+     */
     public function create()
     {
-
         return view('companies.create');
     }
 
-    public function store()
+    /**
+     * Store The New Company
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @throws \Illuminate\Foundation\Validation\ValidationException
+     */
+    public function store(Request $request)
     {
         // validate
         // read more on validation at http://laravel.com/docs/validation
-        $rules = array(
-            'naam' => 'required|min:2|max:30',
-            'address' => 'required',
-            'postcode' => 'required|max:6|min:6',
-            'plaats' => 'required',
-            'telnr' => 'required|numeric'
-        );
-        $validator = Validator::make(Input::all(), $rules);
+        $validator = $this->validator($request->all());
 
-        // process the login
         if ($validator->fails()) {
-            return Redirect::to('companies.create')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {
-            // store
-            $company = new Company;
-            $company->naam = Input::get('naam');
-            $company->address = Input::get('address');
-            $company->postcode = Input::get('postcode');
-            $company->plaats = Input::get('plaats');
-            $company->telnr = Input::get('telnr');
-            $company->save();
-
-            // redirect
-            Session::flash('message', 'Success');
-            return Redirect::to('companies');
+            $this->throwValidationException($request, $validator);
         }
+        Company::create($request->all());
+        Session::flash('message', 'Success');
+        return redirect('companies');
 
     }
 
+    /**
+     * Return Show View
+     * @param $id
+     * @return mixed
+     */
     public function show($id)
     {
-        $company = Company::find($id);
-
+        $company = Company::findOrFail($id);
         // show the view and pass the nerd to it
-        return View::make('companies.show')
-            ->with('company', $company);
+        return View::make('companies.show', compact('company'));
     }
 
+    /**
+     * Edit View Company
+     * @param $id
+     * @return mixed
+     */
     public function edit($id)
     {
-        $company = Company::find($id);
-
-        return view::make('companies.edit')
-            ->with('company', $company);
+        $company = Company::findOrFail($id);
+        return view::make('companies.edit', compact('company'));
     }
 
+    /**
+     * Remove A Company
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function destroy($id)
     {
         // delete
         $company = Company::find($id);
         $company->delete();
-
         // redirect
         Session::flash('message', 'Verwijdert!');
-        return Redirect::to('companies');
+        return redirect('companies');
     }
 
-    public function update($id)
+    /**
+     * Updates A Company
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @throws \Illuminate\Foundation\Validation\ValidationException
+     */
+    public function update(Request $request, $id)
     {
-        $rules = array(
-            'naam' => 'required|min:2|max:30',
-            'address' => 'required',
-            'postcode' => 'required|max:6|min:6',
-            'plaats' => 'required',
-            'telnr' => 'required|numeric'
-        );
-        $validator = Validator::make(Input::all(), $rules);
 
-        // process the login
-        if ($validator->fails()) {
-            return Redirect::to('nerds/' . $id . '/edit')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        }
-        if ($validator->fails()) {
-            return Redirect::to('companies.create')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {
-            // store
-            $company = new Company;
-            $company->naam = Input::get('naam');
-            $company->address = Input::get('address');
-            $company->postcode = Input::get('postcode');
-            $company->plaats = Input::get('plaats');
-            $company->telnr = Input::get('telnr');
-            $company->save();
+        $validator = $this->validator($request->all());
 
-            // redirect
-            Session::flash('message', 'Success');
-            return Redirect::to('companies');
+        if ($validator->fails()) {
+            $this->throwValidationException($request, $validator);
         }
+        $company = Company::findOrFail($id);
+        $company->update($request->all());
+        // redirect
+        Session::flash('message', 'Success');
+        return redirect('companies');
     }
 }

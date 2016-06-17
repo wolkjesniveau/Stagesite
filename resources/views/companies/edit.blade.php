@@ -10,27 +10,7 @@
 
     {{ Form::model($company, array('route' => array('companies.update', $company->id), 'method' => 'PUT')) }}
 
-    <div class="form-group">
-        {{ Form::label('naam', 'Naam: ') }}
-        {{ Form::text('naam', null, array('class' => 'form-control')) }}
-    </div>
-
-    <div class="form-group">
-        {{ Form::label('address', 'Address: ') }}
-        {{ Form::email('address', null, array('class' => 'form-control')) }}
-    </div>
-
-    <div class="form-group">
-        {{ Form::label('plaats', 'Plaats: ') }}
-        {{ Form::select('plaats', null, array('class' => 'form-control')) }}
-    </div>
-
-    <div class="form-group">
-        {{ Form::label('telnr', 'Telefoonnummer: ') }}
-        {{ Form::select('telnr', null, array('class' => 'form-control')) }}
-    </div>
-
-    {{ Form::submit('Wijzigen', array('class' => 'btn btn-primary')) }}
+    @include('companies.forms.form')
 
     {{ Form::close() }}
 @stop
