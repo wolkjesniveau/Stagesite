@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.master')
 
 @section('content')
     <li><a href="{{ route('internshipAdmin') }}">Overzicht van Stages</a></li>

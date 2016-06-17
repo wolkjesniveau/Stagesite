@@ -1,4 +1,4 @@
-@extends('master')
+@extends('admin.master')
 
 @section('content')
 
@@ -13,18 +13,7 @@
 
     {{ Form::open(array('route' => 'tool.store')) }}
 
-    <div class="form-group">
-        {{ Form::label('naam', 'Naam') }}
-        {{ Form::text('naam', null, array('class' => 'form-control')) }}
-    </div>
-
-    <div class="form-group">
-        {{ Form::label('omschrijving', 'Omschrijving') }}
-        {{ Form::text('omschrijving', null, array('class' => 'form-control')) }}
-    </div>
-
-
-    {{ Form::submit('Create the Tool!', array('class' => 'btn btn-primary')) }}
+    @include('tools.forms.form')
 
     {{ Form::close() }}
 

@@ -5,7 +5,7 @@
 <div class="">
     <div class="col-md-12">
         <li><a href="{{ route('study.index') }}">Bekijk alle opleidingen</a></li>
-        <li><a href="{{ route('study.create') }}">Maak een opleiding aan</a></li>a
+        <li><a href="{{ route('study.create') }}">Maak een opleiding aan</a></li>
     </div>
 </div>
         {{--
