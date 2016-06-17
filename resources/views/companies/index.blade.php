@@ -36,14 +36,15 @@
                     {{ Form::close() }}
 
                     <!-- Show button -->
-                    {{--<a class="btn btn-small btn-success" href="{{ Route::to('companies/' . $company->id) }}">Laat bedrijf zien</a>--}}
+                    <a class="btn btn-small btn-success" href="{{ URL::to('companies/show', $company->id) }}">Laat bedrijf zien</a>
                     <!-- Edit button -->
-                    {{--<a class="btn btn-small btn-info" href="{{ Route::to('companies/' . $company->id . '/edit') }}">Wijzigen</a>--}}
+                    <a class="btn btn-small btn-info" href="{{ URL::to('companies/edit', $company->id) }}">Wijzigen</a>
 
                 </td>
             </tr>
         @endforeach
         </tbody>
+        <a class="btn btn-small btn-info" href="{{ URL::to('companies/create')}}">Maak nieuw bedrijf aan</a>
     </table>
 @stop
 

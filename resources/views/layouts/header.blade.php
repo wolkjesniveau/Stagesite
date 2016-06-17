@@ -1,23 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>@yield('title')</title>
-
-    {{-- FONTS --}}
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-    {{-- STYLESHEETS --}}
-    <link rel="stylesheet" href="{{ asset('css/stylesheet.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/costum.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('font-awesome-4.6.3/css/font-awesome.min.css') }}">
-
-    {{-- DEPENDENCIES --}}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="{{ asset('js/jquery-1.12.4.min.js') }}"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-</head>
-
 {{-- HEADER BEGIN --}}
 <header>
     <div class="header-container">
@@ -25,7 +5,7 @@
         <div class="header header-left bold">
             <ul>
                 <li><a href="{{ route('welcome') }}">Home</a></li>
-                <li><a href="{{ route('companies.index') }}">Bedrijven</a></li>
+                {{--<li><a href="{{ route('companies') }}">Bedrijven</a></li>--}}
                 {{-- NEED TO ADD ROLECHECK --}}
                 <li><a href="{{ route('admin') }}">Admin</a></li>
 
@@ -35,16 +15,17 @@
         {{-- HEADER MID --}}
         <div class="header header-mid">
             <div class="header-search">
-                <input class="search" type="text" name="search" placeholder=" Zoeken op de website">
-                <button class="search-button">Zoek</button>
+                <form method="get" action="">
+                    <input class="search" id="search" type="text" name="search" placeholder=" Zoeken op de website">
+                    <button class="search-button">Zoek</button>
+                </form>
             </div>
         </div>
 
         {{-- HEADER RIGHT --}}
         <div class="header header-right bold">
             @if (Auth::guest())
-                <li><a href="{{ route('login') }}"><i class="fa fa-key fa-fw"></i> Log in</a></li>
-                <li><a href="{{ route('register') }}"><i class="fa fa-user-plus fa-fw"></i> Register</a></li>
+                <a href="{{ route('login') }}">inloggen/registreren</a>
             @else
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     {{ Auth::user()->name }}
@@ -72,19 +53,3 @@
     </div>
 </header>
 {{-- HEADER END --}}
-<body>
-
-{{-- CONTENT --}}
-<div class="container">
-    <div class="content">
-        @yield('content')
-    </div>
-</div>
-{{-- FOOTER --}}
-<footer>
-    @yield('footer')
-
-</footer>
-
-</body>
-</html>

@@ -22,20 +22,15 @@
 
 
 <body>
-@include('layouts.header')
-
-{{-- TOP PAGE BANNER --}}
-<div class="headerimg">
-    PLACEHOLDER
-</div>
-
+@include('admin.layouts.header')
 {{-- CONTENT --}}
 <div class="container">
     <div class="content">
         @yield('content')
     </div>
 </div>
-@include('layouts.footer')
+@include('admin.layouts.footer')
+
 
 </body>
 </html>

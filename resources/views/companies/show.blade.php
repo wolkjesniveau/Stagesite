@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', "$comapny->naam")
+@section('title', "$company->naam")
 
 @section('content')
 
