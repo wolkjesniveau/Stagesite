@@ -11,38 +11,37 @@
 |
 */
 
-
 Route::get('/', 'PagesController@welcome')->name('welcome');
-Route::get('companies', 'PagesController@companies')->name('companies');
+
+Route::get('admin', 'AdminController@admin')->name('admin');
+
+
+// Company Routes
+Route::resource('companies', 'CompaniesController', ['except' => ['show']]);
 Route::get('company', 'PagesController@company')->name('company');
-Route::get('master', 'PagesController@master')->name('master');
-Route::get('register', 'PagesController@register')->name('register');
-// ROLE CHECK MUST BE ADDED HERE WHEN DATABASE IS CORRECT
-Route::get('admin', 'PagesController@admin')->name('admin');
+
+//Studies Routes
+Route::resource('study', 'StudiesController');
+
+//Tools Routes
+Route::resource('tool', 'ToolsController');
+
+//Internship Routes
+Route::get('internships', 'InternshipsController@index');
+
+
+//// ROLE CHECK MUST BE ADDED HERE WHEN DATABASE IS CORRECT
 Route::get('admin/internshipAdmin', 'PagesController@internshipAdmin')->name('internshipAdmin');
-Route::get('admin/studiesAdmin', 'PagesController@studiesAdmin')->name('studiesAdmin');
 Route::get('admin/schoolsAdmin', 'PagesController@schoolsAdmin')->name('schoolsAdmin');
 Route::get('admin/companiesAdmin', 'PagesController@companiesAdmin')->name('companiesAdmin');
-Route::get('admin', 'AdminController@admin')->name('admin');
 Route::get('internshipAdmin', 'AdminController@internshipAdmin')->name('internshipAdmin');
-Route::get('studiesAdmin', 'AdminController@studiesAdmin')->name('studiesAdmin');
+Route::get('schoolsAdmin', 'AdminController@schoolsAdmin')->name('schoolsAdmin');
 Route::get('companiesAdmin', 'AdminController@companiesAdmin')->name('companiesAdmin');
-
-/* TOOLS SECTION */
-Route::get('toolsIndex', 'ToolsController@Index')->name('toolsIndex');
-Route::get('toolsEdit/{id}', 'ToolsController@Edit')->name('tools-edit');
-Route::post('tool/{id}', 'ToolsController@update')->name('tool.edit');
-Route::get('toolsCreate', 'ToolsController@Create')->name('tools.create');
+Route::get('toolsAdmin', 'AdminController@toolsAdmin')->name('toolsAdmin');
+Route::get('usersAdmin', 'AdminController@usersAdmin')->name('usersAdmin');
 
 
-
-// Model Routes...
-Route::get('internships', 'InternshipsController@index');
-Route::get('studies', 'StudiesController@index');
-
-
-
-// Login Routers...
+//// Login Routers...
 $this->get('login', 'Auth\AuthController@showLoginForm')->name('login');
 $this->post('login', 'Auth\AuthController@login')->name('auth.login');
 $this->get('logout', 'Auth\AuthController@logout')->name('logout');

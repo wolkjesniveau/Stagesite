@@ -1,5 +1,6 @@
 <?php
 
+ini_set('xdebug_max_nesting_level', 255);
 define('LARAVEL_START', microtime(true));
 
 /*

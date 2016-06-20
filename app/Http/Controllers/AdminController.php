@@ -6,6 +6,7 @@ use App\Internship;
 use App\Study;
 use App\Tool;
 use App\Tools;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,29 +18,33 @@ class AdminController extends Controller
         return view('admin.admin');
     }
 
-    /* INTERNSHIP SECTION */
     public function internshipAdmin()
     {
         return view('admin.internship')->with('internships', Internship::all());
     }
 
-    /* COMPANIES SECTION */
+
     public function companiesAdmin()
     {
         return view('admin.companiesAdmin');
     }
-
-    /* SCHOOLS SECTION */
     public function schoolsAdmin()
     {
         return view('admin.schoolsAdmin');
     }
-
-    /* STUDIES SECTION */
     public function studiesAdmin()
     {
         return view('admin.studies')->with('studies', Study::all());
     }
 
+    public function toolsAdmin()
+    {
+        return view('admin.tools')->with('tools', Tool::all());
+    }
 
+    public function usersAdmin()
+    {
+        
+        return view('admin.users')->with('users', User::all());
+    }
 }
