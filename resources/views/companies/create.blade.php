@@ -6,9 +6,9 @@
 
 @section('content')
 
-    <h1>Admin bedrijven pagina</h1>
+    <h1>Create new company</h1>
 
-    {{ Form::open(array('route' => 'companies.store')) }}
+    {{ Form::open(['route' => 'companies.store']) }}
 
     @include('companies.forms.form')
 

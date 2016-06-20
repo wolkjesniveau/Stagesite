@@ -4,10 +4,10 @@
         {{-- HEADER LEFT --}}
         <div class="header header-left bold">
             <ul>
-                <li><a href="{{ route('welcome') }}">Home</a></li>
-                {{--<li><a href="{{ route('companies') }}">Bedrijven</a></li>--}}
+                <li><a href="{{ URL::to('welcome') }}">Home</a></li>
+                <li><a href="{{ URL::to('companies') }}">Bedrijven</a></li>
                 {{-- NEED TO ADD ROLECHECK --}}
-                <li><a href="{{ route('admin') }}">Admin</a></li>
+                <li><a href="{{ URL::to('admin') }}">Admin</a></li>
 
             </ul>
         </div>
