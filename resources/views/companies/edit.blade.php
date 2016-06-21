@@ -8,7 +8,7 @@
 
     <<h1>Edit {{ $company->naam }}</h1>
 
-    {{ Form::model($company, array('route' => array('companies.update', $company->id), 'method' => 'PUT')) }}
+    {{ Form::model($company, (['route' => (['companies.update', $company->id]), 'method' => 'PUT'])) }}
 
     @include('companies.forms.form')
 

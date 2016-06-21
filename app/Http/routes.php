@@ -19,6 +19,8 @@ Route::get('admin', 'AdminController@admin')->name('admin');
 // Company Routes
 Route::resource('companies', 'CompaniesController', ['except' => ['show']]);
 Route::get('company', 'PagesController@company')->name('company');
+Route::get('companies/edit/{id}', 'CompaniesController@edit');
+Route::get('companies/create', 'CompaniesController@create');
 
 //Studies Routes
 Route::resource('study', 'StudiesController');
@@ -37,6 +39,8 @@ Route::get('admin/companiesAdmin', 'PagesController@companiesAdmin')->name('comp
 Route::get('internshipAdmin', 'AdminController@internshipAdmin')->name('internshipAdmin');
 Route::get('schoolsAdmin', 'AdminController@schoolsAdmin')->name('schoolsAdmin');
 Route::get('companiesAdmin', 'AdminController@companiesAdmin')->name('companiesAdmin');
+Route::get('toolsAdmin', 'AdminController@toolsAdmin')->name('toolsAdmin');
+Route::get('usersAdmin', 'AdminController@usersAdmin')->name('usersAdmin');
 
 
 //// Login Routers...
