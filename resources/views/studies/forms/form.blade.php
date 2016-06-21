@@ -19,4 +19,4 @@
 </div>
 
 
-{{ Form::submit('Maak opleiding aan!', array('class' => 'btn btn-primary')) }}
+{{ Form::submit('Bevestigen', array('class' => 'btn btn-primary')) }}

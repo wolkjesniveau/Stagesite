@@ -26,6 +26,7 @@ Route::get('companies/create', 'CompaniesController@create');
 Route::resource('study', 'StudiesController');
 
 //Tools Routes
+
 Route::resource('tool', 'ToolsController');
 
 //Internship Routes

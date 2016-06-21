@@ -1,9 +1,17 @@
-@extends('layouts.app')
+@extends('admin.master')
 
 @section('content')
-    <li><a href="{{ route('internshipAdmin') }}">Overzicht van Stages</a></li>
-    <li><a href="{{ route('companies.index') }}">Overzicht van bedrijven</a></li>
-    <li><a href="{{ route('schoolsAdmin') }}">Overzicht van scholen</a></li>
-    <li><a href="{{ route('studies.index') }}">Overzicht van Opleidingen</a></li>
-    <li><a href="{{ route('tools.index') }}">Overzicht van Tools</a></li>
+    <div class="col-md-12">
+        <h1 class="text-align-center pagetitle"> Admin onderdelen</h1>
+
+    <a class="btn btn-primary" href="{{ route('tool.index') }}">Tools admin</a>
+
+    @if (@Auth::user()->role_id > 3)
+            <a class="btn btn-primary" href="{{ route('internshipAdmin') }}">Stages Admin</a>
+            <a class="btn btn-primary" href="{{ route('companies.index') }}">Bedrijven Admin</a>
+            <a class="btn btn-primary" href="{{ route('schoolsAdmin') }}">Scholen Admin</a>
+            <a class="btn btn-primary" href="{{ route('study.index') }}">Opleidingen Admin</a>
+    @endif
+    </div>
 @endsection
+

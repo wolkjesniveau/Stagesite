@@ -28,6 +28,12 @@
 .mr4 {
     margin-right: 4px !important;
 }
-.mw850 {
-    max-width: 850px;
+.mw810 {
+    max-width: 810px;
+}
+.mw86 {
+    max-width: 86px;
+}
+.text-align-center {
+    text-align: center;
 }

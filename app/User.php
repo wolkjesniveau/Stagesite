@@ -11,6 +11,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    public $table = "users";
     protected $fillable = [
         'email',
         'password',
@@ -32,7 +33,16 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return $this->role()->where('role_id', 5)->first();
+        foreach ($this->role()->get() as $role)
+        {
+            if ($role->id == 5)
+            {
+                return true;
+            }
+        }
+
+        return false;
+
     }
 
     public function isDocent()

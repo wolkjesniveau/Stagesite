@@ -3,16 +3,17 @@
 @section('content')
 
 
-    <li><a href="{{route('study.index') }}">Bekijk alle opleidingen</a></li>
-    <li><a href="{{ route('study.create') }}">Maak een opleiding aan</a></li>
-
     <h2>Maak een opleiding aan</h2>
 
-    {{ Form::open(array('route' => 'study.store')) }}
+    <div class="form-group col-md-12 jumbotron text-center">
+        {{ Form::open(array('route' => 'study.store')) }}
 
-    @include('studies.forms.form')
+        @include('studies.forms.form')
 
-    {{ Form::close() }}
+        {{ Form::close() }}
+    </div>
 
-
+    <div class="text-align-center">
+        <a class="btn btn-primary" href="{{ route('study.index') }}">Terug naar alle opleidingen</a>
+    </div>
 @endsection
