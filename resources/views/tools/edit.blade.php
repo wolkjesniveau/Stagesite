@@ -1,8 +1,8 @@
 @extends('admin.master')
 
 @section('content')
-    <li><a href="{{ route('tool.index') }}">Bekijk alle Tools</a></li>
-    <li><a href="{{ route('tool.create') }}">Maak een Tool aan</a></li>
+
+    <h1 class="text-align-center">{{ $tool->naam }} aan het bewerken</h1>
 
     <div class="form-group col-md-12 jumbotron text-center">
 
@@ -11,7 +11,12 @@
         @include('tools.forms.form')
 
         {{ Form::close() }}
+
+
         </div>
+
+    <div class="text-align-center">
+        <a class="btn btn-primary" href="{{ route('tool.index') }}">Terug naar alle Tools</a>
     </div>
 
 @endsection

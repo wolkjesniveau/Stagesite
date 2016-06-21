@@ -9,4 +9,4 @@
 </div>
 
 
-{{ Form::submit('Create the Tool!', array('class' => 'btn btn-primary')) }}
+{{ Form::submit('Bevestigen', array('class' => 'btn btn-primary')) }}
