@@ -1,7 +1,4 @@
-<?php
-use \App\User;
-$user = new User();
-?>{{-- HEADER BEGIN --}}
+{{-- HEADER BEGIN --}}
 <header>
     <div class="header-container">
         {{-- HEADER LEFT --}}
@@ -13,9 +10,6 @@ $user = new User();
                 @if (@Auth::user()->role_id > 3)
                     <li><a href="{{ route('admin') }}">Admin</a></li>
                     @endif
-
-
-
             </ul>
         </div>
 

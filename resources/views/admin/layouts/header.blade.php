@@ -7,8 +7,9 @@
                 <li><a href="{{ route('welcome') }}">Home</a></li>
                 <li><a href="{{ route('companies.index') }}">Bedrijven</a></li>
                 {{-- NEED TO ADD ROLECHECK --}}
-                <li><a href="{{ route('admin') }}">Admin</a></li>
-
+                @if (@Auth::user()->role_id > 3)
+                    <li><a href="{{ route('admin') }}">Admin</a></li>
+                @endif
             </ul>
         </div>
 
