@@ -6,9 +6,9 @@
 
 @section('content')
 
-    <<h1>Edit {{ $company->naam }}</h1>
+    <h1>Edit {{ $company->naam }}</h1>
 
-    {{ Form::model($company, (['route' => (['admin.companies.update', $company->id]), 'method' => 'PUT'])) }}
+    {{ Form::model($company, (['route' => (['companies.update', $company->id]), 'method' => 'PUT'])) }}
 
     @include('companies.forms.form')
 

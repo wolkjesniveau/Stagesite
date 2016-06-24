@@ -5,11 +5,11 @@
         <h1 class="text-align-center pagetitle"> Admin onderdelen</h1>
 
     @if (@Auth::user()->role_id > 3)
-            <a class="btn btn-primary" href="{{ route('tool.index') }}">Tools admin</a>
-            <a class="btn btn-primary" href="{{ route('internshipAdmin') }}">Stages Admin</a>
-            <a class="btn btn-primary" href="{{ route('companies.index') }}">Bedrijven Admin</a>
-            <a class="btn btn-primary" href="{{ route('schoolsAdmin') }}">Scholen Admin</a>
-            <a class="btn btn-primary" href="{{ route('study.index') }}">Opleidingen Admin</a>
+            <a class="btn btn-primary" href="{{ URL::to('tool.index') }}">Tools admin</a>
+            <a class="btn btn-primary" href="{{ URL::to('internshipAdmin') }}">Stages Admin</a>
+            <a class="btn btn-primary" href="{{ URL::to('companies') }}">Bedrijven Admin</a>
+            <a class="btn btn-primary" href="{{ URL::to('schoolsAdmin') }}">Scholen Admin</a>
+            <a class="btn btn-primary" href="{{ URL::to('study.index') }}">Opleidingen Admin</a>
     @endif
     </div>
 @endsection

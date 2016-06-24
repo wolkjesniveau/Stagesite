@@ -8,7 +8,7 @@
 
     <h1>Create new company</h1>
 
-    {{ Form::open(['route' => 'admin.companies.store']) }}
+    {{ Form::open(['route' => 'companies.store']) }}
 
     @include('companies.forms.form')
 

@@ -15,9 +15,9 @@ Route::get('/', 'PagesController@welcome')->name('welcome');
 
 Route::get('admin', 'AdminController@admin')->name('admin');
 
+
 // Admin Company Routes
-Route::resource('admin/companies', 'CompaniesController', ['except' => ['show']]);
-Route::get('admin/company', 'PagesController@company')->name('company');
+Route::resource('companies', 'CompaniesController', ['except' => ['show']]);
 Route::get('admin/companies/edit/{id}', 'CompaniesController@edit');
 Route::get('admin/companies/create', 'CompaniesController@create');
 Route::get('admin/companies/show/{id}', 'CompaniesController@show');
