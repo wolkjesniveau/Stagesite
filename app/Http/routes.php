@@ -31,6 +31,15 @@ Route::resource('tool', 'ToolsController');
 //Internship Routes
 Route::get('internships', 'InternshipsController@index');
 
+//School Routes
+Route::resource('schools', 'SchoolController', ['except' => ['show']]);
+Route::get('school', 'PagesController@school')->name('school');
+Route::get('schools/edit/{id}', 'SchoolController@edit');
+Route::get('schools/create', 'SchoolController@create');
+Route::get('schools/show/{id}', 'SchoolController@show');
+
+
+
 
 //// ROLE CHECK MUST BE ADDED HERE WHEN DATABASE IS CORRECT
 Route::get('admin/internshipAdmin', 'PagesController@internshipAdmin')->name('internshipAdmin');
