@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Internship extends Model
 {
     protected $fillable = [
+        'soort_stage',
         'begin_DATE',
         'eind_DATE',
         'contact_id',

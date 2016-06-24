@@ -14,6 +14,7 @@ class CreateInternshipsTable extends Migration
     {
         Schema::create('internships', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('soort_stage');
             $table->date('begin_DATE');
             $table->date('eind_DATE');
             $table->foreign('contact_id')->references('id')->on('contacts');
