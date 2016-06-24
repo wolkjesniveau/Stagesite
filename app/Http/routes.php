@@ -16,16 +16,18 @@ Route::get('/', 'PagesController@welcome')->name('welcome');
 Route::get('admin', 'AdminController@admin')->name('admin');
 
 
-// Company Routes
+// Admin Company Routes
 Route::resource('companies', 'CompaniesController', ['except' => ['show']]);
-Route::get('company', 'PagesController@company')->name('company');
-Route::get('companies/edit/{id}', 'CompaniesController@edit');
-Route::get('companies/create', 'CompaniesController@create');
+Route::get('admin/companies/edit/{id}', 'CompaniesController@edit');
+Route::get('admin/companies/create', 'CompaniesController@create');
+Route::get('admin/companies/show/{id}', 'CompaniesController@show');
+Route::delete('admin/companies/{1}', 'CompaniesController@destroy');
 
 //Studies Routes
 Route::resource('study', 'StudiesController');
 
 //Tools Routes
+
 Route::resource('tool', 'ToolsController');
 
 //Internship Routes
@@ -44,10 +46,8 @@ Route::get('schools/show/{id}', 'SchoolController@show');
 //// ROLE CHECK MUST BE ADDED HERE WHEN DATABASE IS CORRECT
 Route::get('admin/internshipAdmin', 'PagesController@internshipAdmin')->name('internshipAdmin');
 Route::get('admin/schoolsAdmin', 'PagesController@schoolsAdmin')->name('schoolsAdmin');
-Route::get('admin/companiesAdmin', 'PagesController@companiesAdmin')->name('companiesAdmin');
 Route::get('internshipAdmin', 'AdminController@internshipAdmin')->name('internshipAdmin');
 Route::get('schoolsAdmin', 'AdminController@schoolsAdmin')->name('schoolsAdmin');
-Route::get('companiesAdmin', 'AdminController@companiesAdmin')->name('companiesAdmin');
 Route::get('toolsAdmin', 'AdminController@toolsAdmin')->name('toolsAdmin');
 Route::get('usersAdmin', 'AdminController@usersAdmin')->name('usersAdmin');
 

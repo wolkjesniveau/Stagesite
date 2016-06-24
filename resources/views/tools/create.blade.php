@@ -1,32 +1,20 @@
-@extends('master')
+
+@extends('admin.master')
 
 @section('content')
 
 
-    <li><a href="{{ route('tool.index') }}">Bekijk alle Tools</a></li>
-    <li><a href="{{ route('tool.create') }}">Maak een Tool aan</a></li>
+    <h2 CLASS="text-align-center">Maak een Tool aan</h2>
 
-    <h2>Maak een Tool aan</h2>
-
-{{--    <!-- if there are creation errors, they will show here -->
-    {{ HTML::ul($errors->all()) }}--}}
+    <div class="form-group col-md-12 jumbotron text-center">
+   <!-- if there are creation errors, they will show here -->
+    {{--{{ HTML::ul($errors->all()) }}--}}
 
     {{ Form::open(array('route' => 'tool.store')) }}
 
-    <div class="form-group">
-        {{ Form::label('naam', 'Naam') }}
-        {{ Form::text('naam', null, array('class' => 'form-control')) }}
-    </div>
-
-    <div class="form-group">
-        {{ Form::label('omschrijving', 'Omschrijving') }}
-        {{ Form::text('omschrijving', null, array('class' => 'form-control')) }}
-    </div>
-
-
-    {{ Form::submit('Create the Tool!', array('class' => 'btn btn-primary')) }}
+    @include('tools.forms.form')
 
     {{ Form::close() }}
 
-
+    </div>
 @endsection

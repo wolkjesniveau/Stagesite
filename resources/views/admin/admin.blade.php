@@ -1,9 +1,16 @@
-@extends('master')
+@extends('admin.master')
 
 @section('content')
-    <li><a href="{{ URL::to('internship') }}">Overzicht van Stages</a></li>
-    <li><a href="{{ URL::to('companies') }}">Overzicht van bedrijven</a></li>
-    <li><a href="{{ URL::to('schools') }}">Overzicht van scholen</a></li>
-    <li><a href="{{ URL::to('studies') }}">Overzicht van Opleidingen</a></li>
-    <li><a href="{{ URL::to ('tools') }}">Overzicht van Tools</a></li>
+    <div class="col-md-12">
+        <h1 class="text-align-center pagetitle"> Admin onderdelen</h1>
+
+    @if (@Auth::user()->role_id > 3)
+            <a class="btn btn-primary" href="{{ URL::to('tool.index') }}">Tools admin</a>
+            <a class="btn btn-primary" href="{{ URL::to('internshipAdmin') }}">Stages Admin</a>
+            <a class="btn btn-primary" href="{{ URL::to('companies') }}">Bedrijven Admin</a>
+            <a class="btn btn-primary" href="{{ URL::to('schoolsAdmin') }}">Scholen Admin</a>
+            <a class="btn btn-primary" href="{{ URL::to('study.index') }}">Opleidingen Admin</a>
+    @endif
+    </div>
 @endsection
+

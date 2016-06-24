@@ -1,16 +1,14 @@
 @extends('master')
 
-@section('title', "$company->naam")
+@section('title',"Overzicht van " . "$company->naam")
 
 @section('content')
 
-    <div class="jumbotron text-center">
-        <h2>{{ $company->naam }}</h2>
-        <p>
-            <p>Address:</p> {{ $company->address }}<br>
-            <p>Plaats:</p> {{ $company->plaats }}<br>
-            <p>Postcode:</p> {{ $company->postcode }}<br>
-            <p>Tellefoonnummer:</p> {{ $company->telnr }}
-        </p>
+    <div class=" text-center">
+        <h1>{{ $company->naam }}</h1>
+            <p>Address: {{ $company->address }}</p>
+            <p>Plaats: {{ $company->plaats }}</p>
+            <p>Postcode: {{ $company->postcode }}</p>
+            <p>Telefoonnummer: {{ $company->telnr }}</p>
     </div>
 @stop

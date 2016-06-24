@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 use Validator;
 
 use App\Http\Requests;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
+use Redirect;
+use Session;
 use Illuminate\View\View;
-use Symfony\Component\Console\Input\Input;
+use Input;
 
 class StudiesController extends Controller
 {

@@ -16,11 +16,6 @@ class PagesController extends Controller
         return view('pages.companies');
     }
 
-    public function company()
-    {
-        return view('pages.company');
-    }
-
     public function master()
     {
         return view('master');

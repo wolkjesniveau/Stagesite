@@ -32,15 +32,6 @@ class AdminController extends Controller
     {
         return view('admin.schoolsAdmin');
     }
-    public function studiesAdmin()
-    {
-        return view('admin.studies')->with('studies', Study::all());
-    }
-
-    public function toolsAdmin()
-    {
-        return view('admin.tools')->with('tools', Tool::all());
-    }
 
     public function usersAdmin()
     {

@@ -35,17 +35,20 @@ header ul li {
 .headerimg {
     width: 100%;
     max-width: 100%;
-    max-height: 400px;
+    max-height: 250px;
     height: 100%;
-/*   background-image: url('http://2geh.com/data/uploads/18/557132.jpg');*/
     opacity: 0.8;
     background-color: #f6f6f6;
     text-align: center;
     vertical-align: middle;
-    line-height: 400px;
+    line-height: 200px;
     border-color: #e7e7e7;
     border-width: 0 0 1px;
     border-style: solid;
+}
+
+.headerimg p {
+    font-size: 46px;
 }
 .header {
     display: inline-block;
@@ -134,12 +137,26 @@ a:hover {
 }
 .stageblokjes div{
     display: inline-block;
-    padding: 100px;
-    border: 2px solid;
+    padding: 0;
+    border: 1px solid;
+
 }
 .stageblok {
     min-height: 285px;
     height: 285px;
+    max-height: 285px;
+    max-width: 300px;
+    min-width: 300px;
+    vertical-align: middle;
+   }
+.stageimg1 {
+    background-image: url("http://www.openmonumentendag.nl/w/wp-content/uploads/2012/06/Voortgezet-onderwijs.jpg");
+}
+.stageimg2 {
+    background-image: url("http://static0.trouw.nl/static/photo/2011/13/11/12/20110607134817/media_xl_864342.jpg");
+}
+.stageimg3 {
+    background-image: url("https://www.sslleiden.nl/websites/assets/images/content_images/fotoos/foto-website/_resampled/resizedimage480320-Onze-docenten-tekst.jpg");
 }
 .pagetitle {
     text-align: center;

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class InternshipController extends \App\Http\Controllers\Controller {
+class InternshipController extends Controller {
 
     public function internshipsAdmin()
     {

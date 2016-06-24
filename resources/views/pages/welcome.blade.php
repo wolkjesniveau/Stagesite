@@ -6,10 +6,10 @@ Welkom
 
 @section('content')
     <div class="pagetitle">Welkom</div>
-        <div class="stageblokjes">
-            <div class="col-md-4 stageblok">(afbeelding)<br><br>Wilt u een leerbedrijf worden?</div>
-                <div class="col-md-4 stageblok">(afbeelding)<br><br> Hoe vind ik een stagiare?</div>
-            <div class="col-md-4 stageblok">(afbeelding) <br><br> Zelf op zoek naar een stage?</div>
+        <div class="stageblokjes whitetext">
+            <div class="col-md-4 stageblok stageimg1"><div class="back">Wilt u een leerbedrijf worden?</div></div>
+                <div class="col-md-4 stageblok stageimg2"><div class="back">Hoe vind ik een stagiare?</div></div>
+            <div class="col-md-4 stageblok stageimg3"><div class="back top">Zelf op zoek naar een stage?</div></div>
         </div>
 @stop
 

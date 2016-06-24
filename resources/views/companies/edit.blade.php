@@ -1,4 +1,4 @@
-@extends('master')
+@extends('admin.master')
 
 @section('title')
     Admin Bedrijven overzicht
@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <<h1>Edit {{ $company->naam }}</h1>
+    <h1>Edit {{ $company->naam }}</h1>
 
     {{ Form::model($company, (['route' => (['companies.update', $company->id]), 'method' => 'PUT'])) }}
 
