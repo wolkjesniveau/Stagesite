@@ -30,21 +30,21 @@
                 <td>
 
                     <!-- Delete button -->
-                    {{ Form::open(array('url' => 'companies/' . $company->id, 'class' => 'pull-right')) }}
+                    {{ Form::open(['url' => 'admin/companies/' . $company->id, 'class' => 'pull-right']) }}
                     {{ Form::hidden('_method', 'DELETE') }}
-                    {{ Form::submit('Verwijderen', array('class' => 'btn btn-warning')) }}
+                    {{ Form::submit('Verwijderen', ['class' => 'btn btn-warning']) }}
                     {{ Form::close() }}
 
                     <!-- Show button -->
-                    <a class="btn btn-small btn-success" href="{{ URL::to('companies/show', $company->id) }}">Laat bedrijf zien</a>
+                    <a class="btn btn-small btn-success" href="{{ URL::to('admin/companies/show', $company->id) }}">Laat bedrijf zien</a>
                     <!-- Edit button -->
-                    <a class="btn btn-small btn-info" href="{{ URL::to('companies/edit', $company->id) }}">Wijzigen</a>
+                    <a class="btn btn-small btn-info" href="{{ URL::to('admin/companies/edit', $company->id) }}">Wijzigen</a>
 
                 </td>
             </tr>
         @endforeach
         </tbody>
-        <a class="btn btn-small btn-info" href="{{ URL::to('companies/create')}}">Maak nieuw bedrijf aan</a>
+        <a class="btn btn-small btn-info" href="{{ URL::to('admin/companies/create')}}">Maak nieuw bedrijf aan</a>
     </table>
 @stop
 

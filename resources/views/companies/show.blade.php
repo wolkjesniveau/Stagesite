@@ -5,12 +5,10 @@
 @section('content')
 
     <div class="jumbotron text-center">
-        <h2>{{ $company->naam }}</h2>
-        <p>
-            <p>Address:</p> {{ $company->address }}<br>
-            <p>Plaats:</p> {{ $company->plaats }}<br>
-            <p>Postcode:</p> {{ $company->postcode }}<br>
-            <p>Tellefoonnummer:</p> {{ $company->telnr }}
-        </p>
+        <h1>{{ $company->naam }}</h1>
+            <p>Address: {{ $company->address }}</p><br>
+            <p>Plaats: {{ $company->plaats }}</p><br>
+            <p>Postcode: {{ $company->postcode }}</p><br>
+            <p>Tellefoonnummer: {{ $company->telnr }}</p>
     </div>
 @stop
