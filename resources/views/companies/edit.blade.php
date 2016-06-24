@@ -1,4 +1,4 @@
-@extends('master')
+@extends('admin.master')
 
 @section('title')
     Admin Bedrijven overzicht

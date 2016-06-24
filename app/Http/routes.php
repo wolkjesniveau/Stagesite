@@ -27,6 +27,7 @@ Route::delete('admin/companies/{1}', 'CompaniesController@destroy');
 Route::resource('study', 'StudiesController');
 
 //Tools Routes
+
 Route::resource('tool', 'ToolsController');
 
 //Internship Routes

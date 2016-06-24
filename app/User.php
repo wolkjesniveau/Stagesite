@@ -11,6 +11,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    public $table = "users";
     protected $fillable = [
         'email',
         'password',
@@ -21,7 +22,7 @@ class User extends Authenticatable
     // Werkt
     public function role()
     {
-        return $this->belongsTo('App\Role');
+        return $this->belongsToMany('App\Role');
     }
 
     // Werkt
@@ -29,4 +30,25 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Contacts');
     }
+
+    public function isAdmin()
+    {
+        foreach ($this->role()->get() as $role)
+        {
+            if ($role->id == 5)
+            {
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+
+    public function isDocent()
+    {
+        return $this->role()->where('role_id', 4)->first();
+    }
+
+
 }

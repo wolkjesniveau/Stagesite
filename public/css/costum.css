@@ -28,6 +28,25 @@
 .mr4 {
     margin-right: 4px !important;
 }
-.mw850 {
-    max-width: 850px;
+.mw810 {
+    max-width: 810px;
+}
+.mw86 {
+    max-width: 86px;
+}
+.text-align-center {
+    text-align: center;
+}
+.whitetext {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+.back {
+    background-color: rgba(0,0,0,0.3)!important;
+    width: 100%;
+    height: 100%;
+    padding-top: 120px !important;
+    border: none;
 }

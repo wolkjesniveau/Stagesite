@@ -14,6 +14,7 @@
             <td>Postcode</td>
             <td>Plaats</td>
             <td>Telefoonnummer</td>
+            <td>Acties</td>
         </tr>
         </thead>
         <tbody>
