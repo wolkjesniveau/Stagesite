@@ -13,6 +13,7 @@ class User extends Authenticatable
      */
     public $table = "users";
     protected $fillable = [
+        'name',
         'email',
         'password',
         'role_id',
@@ -31,21 +32,17 @@ class User extends Authenticatable
         return $this->belongsTo('App\Contacts');
     }
 
-    public function isAdmin()
+    public function IsAdmin($request)
     {
-        foreach ($this->role()->get() as $role)
-        {
-            if ($role->id == 5)
-            {
-                return true;
-            }
+        if ($request->role()) {
+            return true;
         }
 
         return false;
 
     }
 
-    public function isDocent()
+    public function IsDocent()
     {
         return $this->role()->where('role_id', 4)->first();
     }

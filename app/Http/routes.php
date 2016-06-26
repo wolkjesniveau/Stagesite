@@ -13,7 +13,7 @@
 
 Route::get('/', 'PagesController@welcome')->name('welcome');
 
-Route::get('admin', 'AdminController@admin')->name('admin');
+Route::get('admin', ['uses' => 'AdminController@admin'])->name('admin');
 
 
 // Admin Company Routes
@@ -47,6 +47,9 @@ Route::get('schools/edit/{id}', 'SchoolController@edit');
 Route::get('schools/create', 'SchoolController@create');
 Route::get('schools/show/{id}', 'SchoolController@show');
 
+//Users Routes
+
+Route::resource('user', 'UsersController');
 
 
 
