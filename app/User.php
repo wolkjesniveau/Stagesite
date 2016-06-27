@@ -20,6 +20,11 @@ class User extends Authenticatable
         'contact_id'
     ];
 
+    /**
+     * @var array
+     */
+    protected $hidden = ['password', 'remember_token'];
+
     // Werkt
     public function role()
     {
@@ -32,20 +37,24 @@ class User extends Authenticatable
         return $this->belongsTo('App\Contacts');
     }
 
-    public function IsAdmin($request)
-    {
-        if ($request->role()) {
-            return true;
-        }
-
-        return false;
-
-    }
 
     public function IsDocent()
     {
-        return $this->role()->where('role_id', 4)->first();
+        return ($this->role_id == 4);
     }
 
+    public function IsNotDocent()
+    {
+        return ($this->role_id < 4);
+    }
 
+    public function IsAdmin()
+    {
+        return ($this->role_id == 5);
+    }
+
+    public function IsNotAdmin()
+    {
+        return ($this->role_id < 5);
+    }
 }
