@@ -1,10 +1,10 @@
-@extends('master')
+@extends('admin.master')
 
 @section('content')
 
 
 
-        <h1>Edit {{ $school->name }}</h1>
+        <h1 class="text-align-center">{{ $school->name }} aan het bewerken</h1>
 
         <!-- if there are creation errors, they will show here -->
         {{--{{ HTML::ul($errors->all()) }}--}}

@@ -65,7 +65,7 @@ class SchoolController extends Controller
             $school->save();
 
             // redirect
-            Session::flash('message', 'Successfully created nerd!');
+            Session::flash('message', 'Successfully created School!');
             return Redirect::to('schools');
         }
     }

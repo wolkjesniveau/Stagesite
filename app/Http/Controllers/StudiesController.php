@@ -14,6 +14,11 @@ use Input;
 
 class StudiesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('docent');
+    }
+
     private function validator($input)
     {
         return Validator::make($input, [

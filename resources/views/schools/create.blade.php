@@ -1,17 +1,11 @@
-@extends('master')
+@extends('admin.master')
 
 @section('content')
 
 
-            <li><a href="{{ URL::to('schools') }}">View All Schools</a></li>
-            <li><a href="{{ URL::to('schools/create') }}">Create a School</a>
-        </ul>
-    </nav>
+    <h2 class="text-align-center">Maak een School aan</h2>
 
-    <h1>Create a School</h1>
-
-    <!-- if there are creation errors, they will show here -->
-    {{--{{ HTML::ul($errors->all()) }}--}}
+    <div class="form-group col-md-12 jumbotron text-center">
 
     {{ Form::open(array('url' => 'schools')) }}
 
@@ -20,9 +14,9 @@
         {{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
     </div>
 
-    {{ Form::submit('Create the School!', array('class' => 'btn btn-primary')) }}
+    {{ Form::submit('Verzenden', array('class' => 'btn btn-primary')) }}
 
     {{ Form::close() }}
-
+</div>
 
 @endsection

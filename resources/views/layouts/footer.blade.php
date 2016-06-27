@@ -1,5 +1,5 @@
 {{-- FOOTER --}}
 <footer>
-    @yield('footer')
+    {{--@yield('footer')--}}
 
 </footer>
