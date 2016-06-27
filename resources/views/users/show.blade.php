@@ -1,4 +1,7 @@
-@extends('admin.master')
+@extends('admin.    master')
+
+@section('title',"$user->name" . " aan het bekijken")
+
 
 @section('content')
 

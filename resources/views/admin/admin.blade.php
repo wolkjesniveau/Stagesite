@@ -9,9 +9,13 @@
             <a class="btn btn-primary" href="{{ URL::to('internships') }}">Stages Admin</a>
             <a class="btn btn-primary" href="{{ URL::to('companies') }}">Bedrijven Admin</a>
             <a class="btn btn-primary" href="{{ URL::to('schoolsAdmin') }}">Scholen Admin</a>
-            <a class="btn btn-primary" href="{{ URL::to('study.index') }}">Opleidingen Admin</a>
-            <a class="btn btn-primary" href="{{ URL::to('user') }}">Users Admin</a>
-    @endif
+            <a class="btn btn-primary" href="{{ URL::to('study') }}">Opleidingen Admin</a>
+
+        @if (@Auth::user()->role_id > 4)
+                <a class="btn btn-primary" href="{{ URL::to('user') }}">Users Admin</a>
+            @endif
+        @endif
+
     </div>
 @endsection
 

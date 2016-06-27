@@ -6,10 +6,11 @@
             <ul>
                 <li><a href="{{ URL::to('/') }}">Home</a></li>
                 <li><a href="{{ URL::to('companies') }}">Bedrijven</a></li>
+                <li><a href="{{ URL::to('internships') }}">Stages</a></li>
                 {{-- NEED TO ADD ROLECHECK --}}
                 @if (@Auth::user()->role_id > 3)
                     <li><a href="{{ route('admin') }}">Admin</a></li>
-                    @endif
+                @endif
             </ul>
         </div>
 
@@ -21,14 +22,25 @@
                      <button class="search-button">Zoek</button>
                  </form>
              </div>
+
+{{--             {!! Form::open(array("route" => "queries.search’, )) !!}
+             {!! Form::text("Search", null,
+                                    array("required" ,
+                                         "class"=>"form-control",
+                                         "placeholder"=>"Search website")) !!}
+             {!! Form::submit("Search",
+                                        array("class"=>"btn btn-default")) !!}
+             {!! Form::close() !!}--}}
+
+
          </div>
 
          {{-- HEADER RIGHT --}}
          <div class="header header-right bold">
              @if (@Auth::user()->role_id == null)
-                 <a href="{{ route('login') }}">Inloggen</a>
+                 <a href="{{ route("login") }}">Inloggen</a>
              /
-                 <a href="{{ route('register') }}">Registreren</a>
+                 <a href="{{ route("register") }}">Registreren</a>
              @else
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                      {{ Auth::user()->name }}
@@ -41,15 +53,15 @@
 
                  <ul class="dropdown-menu ">
                      @if (@Auth::user()->role_id == null)
-                         <li><a href="{{ route('login') }}"><i class="fa fa-key fa-fw"></i> Log in</a></li>
-                         <li><a href="{{ route('register') }}"><i class="fa fa-user-plus fa-fw"></i> Register</a></li>
+                         <li><a href="{{ route("login") }}"><i class="fa fa-key fa-fw"></i> Log in</a></li>
+                         <li><a href="{{ route("register") }}"><i class="fa fa-user-plus fa-fw"></i> Register</a></li>
                      @else
                          <li class=""><a href="#"><i class="fa fa-key fa-fw"></i> Profiel</a></li>
-                         <li class=""><a href="{{ route('logout') }}"><i class="fa fa-user-plus fa-fw"></i> Uitloggen</a></li>
+                         <li class=""><a href="{{ route("logout") }}"><i class="fa fa-user-plus fa-fw"></i> Uitloggen</a></li>
                            {{-- WHEN ADMIN GIVE THIS OPTIONS --}}
                          @if (@Auth::user()->role_id > 3)
                              <hr class="devider">
-                             <li class=""><a href="{{ route('admin') }}"><i class="fa fa-unlock fa-fw"></i> Admin</a></li>
+                             <li class=""><a href="{{ route("admin") }}"><i class="fa fa-unlock fa-fw"></i> Admin</a></li>
                              @endif
                      @endif
                  </ul>

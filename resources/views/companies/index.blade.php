@@ -29,7 +29,7 @@
 
                 <td>
                     <!-- Show button -->
-                    <a class="btn btn-small btn-success" href="{{ URL::to('admin/companies/show', $company->id) }}">Laat bedrijf zien</a>
+                    <a class="btn btn-small btn-primary" href="{{ URL::to('admin/companies/show', $company->id) }}">Laat bedrijf zien</a>
 
                     {{--Admin Buttons na role check--}}
                     @if (@Auth::user()->role_id > 3)
@@ -37,14 +37,14 @@
                         <!-- Delete button -->
                     {{ Form::open(['url' => 'companies/' . $company->id, 'class' => 'pull-right']) }}
                     {{ Form::hidden('_method', 'DELETE') }}
-                    {{ Form::submit('Verwijderen', ['class' => 'btn btn-warning']) }}
+                    {{ Form::submit('Verwijderen', ['class' => 'btn btn-danger']) }}
                     {{ Form::close() }}
 
 
                     <!-- Edit button -->
-                    <a class="btn btn-small btn-info" href="{{ URL::to('admin/companies/edit', $company->id) }}">Wijzigen</a>
+                    <a class="btn btn-small btn-primary" href="{{ URL::to('admin/companies/edit', $company->id) }}">Wijzigen</a>
                 </td>
-                    <a class="btn btn-small btn-info" href="{{ URL::to('admin/companies/create')}}">Maak nieuw bedrijf aan</a>
+                    <a class="btn btn-small btn-primary" href="{{ URL::to('admin/companies/create')}}">Maak nieuw bedrijf aan</a>
                 @endif
             </tr>
         @endforeach

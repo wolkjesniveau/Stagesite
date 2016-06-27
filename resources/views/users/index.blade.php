@@ -33,7 +33,7 @@
                         <!-- show the nerd (uses the show method found at GET /nerds/{id} -->
                         <a class="btn btn-small btn-primary" href="{{ route('user.show', $value->id) }}">Show</a>
 
-                        @if (@Auth::user()->role_id > 3)
+                        @if (@Auth::user()->role_id > 4)
                         <!-- edit this Tool (uses the edit method found at GET /nerds/{id}/edit -->
                         <a class="btn btn-small btn-primary mr4" href="{{ route('user.edit', $value->id) }}">Edit</a>
 
