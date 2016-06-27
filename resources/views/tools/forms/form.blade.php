@@ -9,4 +9,4 @@
 </div>
 
 
-{{ Form::submit('Bevestigen', array('class' => 'btn btn-primary')) }}
+{{ Form::submit('Verzenden', array('class' => 'btn btn-primary')) }}

@@ -6,13 +6,18 @@
 
 @section('content')
 
-    <h1>Edit {{ $internships->naam }}</h1>
+    <h1 class="text-align-center">Bewerken {{ $internships->naam }}</h1>
+
+    <div class="form-group col-md-12 jumbotron text-center">
+
 
     {{ Form::model($internships, (['route' => (['internships.update', $internships->id]), 'method' => 'PUT'])) }}
 
     @include('internships.forms.form')
 
     {{ Form::close() }}
+
+        </div>
 @stop
 
 @section('footer')

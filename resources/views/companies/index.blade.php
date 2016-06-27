@@ -1,10 +1,12 @@
-@extends('master')
+@extends('admin.master')
 
 @section('title')
     Bedrijven overzicht
 @stop
 
 @section('content')
+    <h2 class="pagetitle">Overzicht van alle Bedrijven</h2>
+
     <table class="table table-striped table-bordered">
         <thead>
         <tr>

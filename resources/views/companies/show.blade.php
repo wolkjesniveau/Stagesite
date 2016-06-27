@@ -1,14 +1,18 @@
-@extends('master')
+@extends('admin.master')
 
 @section('title',"Overzicht van " . "$company->naam")
 
 @section('content')
 
-    <div class=" text-center">
-        <h1>{{ $company->naam }}</h1>
-            <p>Address: {{ $company->address }}</p>
-            <p>Plaats: {{ $company->plaats }}</p>
-            <p>Postcode: {{ $company->postcode }}</p>
-            <p>Telefoonnummer: {{ $company->telnr }}</p>
+    <div class="jumbotron text-center">
+        <h2 class="text-align-center">{{ $company->naam }}</h2>
+            <p><strong>Address: </strong>{{ $company->address }}</p>
+            <p><strong>Plaats: </strong>{{ $company->plaats }}</p>
+            <p><strong>Postcode: </strong>{{ $company->postcode }}</p>
+            <p><strong>Telefoonnummer: </strong>{{ $company->telnr }}</p>
+    </div>
+    <div class="text-align-center">
+        <a class="btn btn-small btn-primary" href="{{ URL::to('internships') }}">Terug naar alle Bedrijven</a>
+
     </div>
 @stop
