@@ -12,7 +12,7 @@
             <p><strong>Telefoonnummer: </strong>{{ $company->telnr }}</p>
     </div>
     <div class="text-align-center">
-        <a class="btn btn-small btn-primary" href="{{ URL::to('internships') }}">Terug naar alle Bedrijven</a>
+        <a class="btn btn-small btn-primary" href="{{ URL::to('companies') }}">Terug naar alle Bedrijven</a>
 
     </div>
 @stop

@@ -32,19 +32,23 @@
                     <!-- we will also add show, edit, and delete buttons -->
                     <td>
 
+
+
+                                <!-- show the nerd (uses the show method found at GET /nerds/{id} -->
+                        <a class="btn btn-small btn-primary" href="{{ URL::to('schools/show/' . $value->id) }}">Show</a>
+
+                        @if (@Auth::user()->role_id > 3)
+                        <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
+                        <a class="btn btn-small btn-primary" href="{{ URL::to('schools/edit/' . $value->id) }}">Edit</a>
+
+
                         <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
                         <!-- we will add this later since its a little more complicated than the other two buttons -->
                         {{ Form::open(array('url' => 'schools/' . $value->id, 'class' => 'pull-right')) }}
                         {{ Form::hidden('_method', 'DELETE') }}
                         {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
                         {{ Form::close() }}
-
-                                <!-- show the nerd (uses the show method found at GET /nerds/{id} -->
-                        <a class="btn btn-small btn-primary" href="{{ URL::to('schools/show/' . $value->id) }}">Show</a>
-
-                        <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
-                        <a class="btn btn-small btn-primary" href="{{ URL::to('schools/edit/' . $value->id) }}">Edit</a>
-
+                        @endif
                     </td>
                 </tr>
                 @endforeach
